@@ -3,7 +3,6 @@ import {
   BookOpen,
   Check,
   ChevronDown,
-  CircleDollarSign,
   Compass,
   FileCheck2,
   Gauge,
@@ -17,6 +16,7 @@ import {
 } from 'lucide-react';
 
 import { BookOfferDialog } from '@/components/book-offer-dialog';
+import { OfferStore } from '@/components/offer-store';
 import { cn } from '@/lib/utils';
 
 const proof = [
@@ -132,6 +132,14 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-white px-5 py-8 lg:px-8">
+        <div className="independent-note mx-auto max-w-7xl">
+          <div className="independent-note-mark"><img src="/brand/mark-official.png" width="960" height="960" alt="" /></div>
+          <div className="independent-note-copy"><p className="eyebrow">Nezávislý projekt z vlastní zkušenosti</p><h2>Nevznikl v bance ani ve finanční instituci.</h2><p>Restartuj Peníze vytvořil člověk, který se potýkal se stejným finančním zmatkem, nejasnými smlouvami a drahými chybami jako mnoho ostatních. Informace proto uspořádal tak, aby byly srozumitelné a použitelné i bez ekonomického vzdělání.</p><div className="independent-badges"><span><Check /> Žádný finanční poradce</span><span><Check /> Žádné investiční produkty</span><span><Check /> Žádné rychlé rozhodování</span><strong>Jen vše pěkně srozumitelně.</strong></div></div>
+          <a href="#o-projektu">Poznat příběh projektu <ArrowRight /></a>
+        </div>
+      </section>
+
       <section className="bg-[#f5f8f6] px-5 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.04fr_.96fr] lg:items-center">
           <div className="story-image-wrap">
@@ -243,56 +251,21 @@ export default function Home() {
       </section>
 
       <section id="o-projektu" className="bg-[#f5f8f6] px-5 py-22 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-8 rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_24px_80px_rgba(3,23,42,.06)] md:grid-cols-[.58fr_1.42fr] md:p-10">
-          <figure className="founder-visual"><img src="/story/founder-story.jpg" width="1586" height="1000" alt="Ilustrace proměny zkušenosti se smlouvou v praktické vzdělávací materiály" /><figcaption><Sparkles className="size-5 text-brand-yellow" /><span><small>Autor projektu</small><strong>Lukáš Zahrádka</strong></span></figcaption></figure>
-          <div className="self-center"><p className="eyebrow">Proč Restartuj Peníze vzniklo</p><h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-navy">Ne proto, abych vám prodal finanční produkt.</h2><p className="mt-5 leading-7 text-slate-600">Vlastní neznalost důležitých podmínek ve smlouvě mě stála více než 100 000 Kč. Začal jsem si finanční témata skládat od základů a převádět je do podoby, které rozumí i člověk bez ekonomického vzdělání.</p><p className="mt-4 leading-7 text-slate-600">Výsledkem není návod, kam investovat. Je to knihovna, která vám pomůže lépe rozumět informacím, se kterými se při finančních rozhodnutích setkáváte.</p><div className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-green/10 px-3 py-2 text-sm font-bold text-[#087a46]"><ShieldCheck className="size-4" /> Projekt neprodává finanční produkty</div></div>
-        </div>
-      </section>
-
-      <section id="nabidka" className="bg-white px-5 py-22 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center"><p className="eyebrow">Vyberte si podle toho, co právě potřebujete</p><h2 className="section-title">Jedna kniha, tematická sada, nebo celý systém.</h2><p className="section-lead">Každá možnost má jasnou cenu. Kompletní knihovna je nejvýhodnější, ale nemusíte kupovat víc, než právě využijete.</p></div>
-
-          <div className="pricing-grid">
-            <article className="pricing-card">
-              <div className="pricing-card-top"><span className="pricing-label">Sada 1 • pevné základy</span><h3>Finanční mapa</h3><p>Obě hlavní knihy pro pochopení celku, základních pojmů a investičního jazyka.</p></div>
-              <div className="pricing-covers pricing-covers-main"><img src="/books/financial-restart-hq.jpg" width="1200" height="1818" alt="Finanční (Re)Start" /><img src="/books/investor-dictionary-hq.jpg" width="1200" height="1818" alt="Slovník investora" /></div>
-              <ul>{['Finanční (Re)Start • 225 stran', 'Slovník investora • 224 stran', '449 stran uspořádaného základu'].map((item) => <li key={item}><Check />{item}</li>)}</ul>
-              <div className="pricing-total"><p>Při nákupu zvlášť 1 380 Kč</p><strong>1 090 Kč</strong><span>Ušetříte 290 Kč</span></div>
-              <button type="button" disabled>Vybrat Finanční mapu <ArrowRight /></button>
-            </article>
-
-            <article className="pricing-card">
-              <div className="pricing-card-top"><span className="pricing-label">Sada 2 • konkrétní problémy</span><h3>Finanční první pomoc</h3><p>Šest průvodců pro situace, ve kterých lidé nejčastěji ztrácejí peníze, jistotu nebo čas.</p></div>
-              <div className="pricing-covers pricing-covers-practical">{practicalBooks.map((book) => <img key={book.image} src={book.image} width="240" height="364" alt="" />)}</div>
-              <ul>{['nátlak a emoce při rozhodování', 'broker, rozpočet, příjem a poplatky', 'jak prověřit finančního poradce'].map((item) => <li key={item}><Check />{item}</li>)}</ul>
-              <div className="pricing-total"><p>Při nákupu zvlášť 1 494 Kč</p><strong>890 Kč</strong><span>Ušetříte 604 Kč</span></div>
-              <button type="button" disabled>Vybrat praktickou sadu <ArrowRight /></button>
-            </article>
-
-            <article className="pricing-card pricing-card-featured">
-              <span className="pricing-ribbon">Nejlepší poměr obsahu a ceny</span>
-              <div className="pricing-card-top"><span className="pricing-label">Kompletní knihovna</span><h3>Celý systém Restartuj Peníze</h3><p>Obě sady pohromadě a navíc bonus Mindset pro klidnější rozhodování bez FOMO.</p></div>
-              <div className="pricing-covers pricing-covers-complete"><img src="/books/financial-restart-hq.jpg" width="1200" height="1818" alt="Finanční (Re)Start" /><img src="/books/investor-dictionary-hq.jpg" width="1200" height="1818" alt="Slovník investora" /><img src="/books/mindset.png" width="240" height="364" alt="Mindset úspěšného investora" /></div>
-              <ul>{['2 hlavní knihy a 6 praktických e-booků', 'Mindset úspěšného investora jako bonus', '9 PDF • jednorázová platba'].map((item) => <li key={item}><Check />{item}</li>)}</ul>
-              <div className="pricing-total"><p>Obě sady samostatně 1 980 Kč</p><strong>1 490 Kč</strong><span>Ušetříte 490 Kč + získáte bonus</span></div>
-              <button type="button" disabled>Vybrat kompletní knihovnu <ArrowRight /></button>
-            </article>
+        <details className="founder-card mx-auto max-w-6xl">
+          <summary>
+            <img src="/story/lukas-zahradka.webp" width="720" height="720" alt="Lukáš Zahrádka, autor projektu Restartuj Peníze" />
+            <div><p className="eyebrow">Kdo za projektem stojí</p><h2>Lukáš Zahrádka</h2><p>Nejsem finanční poradce ani zástupce banky. Jsem autor a tvůrce, který si prošel drahou chybou ve smlouvě a začal si finanční svět skládat od základů.</p><div className="founder-tags"><span><Check /> nezávislý autor</span><span><Check /> žádný prodej investic</span><span><Check /> zkušenost z praxe</span></div></div>
+            <span className="founder-open-label">Poznat můj příběh <ChevronDown /></span>
+          </summary>
+          <div className="founder-card-detail">
+            <div><p className="book-kicker">Proč Restartuj Peníze vzniklo</p><h3>Ne proto, abych vám řekl, kam investovat.</h3><p>Vlastní neznalost důležitých podmínek ve smlouvě mě stála více než 100 000 Kč. Když jsem hledal cestu ven, zjistil jsem, že informací je všude dost — ale málokdy tvoří přehledný celek, kterému rozumí i člověk bez ekonomického vzdělání.</p><p>Začal jsem proto složité pojmy, smlouvy a běžná finanční rozhodnutí uspořádávat do názorných map. Výsledkem je knihovna, která vám nepředkládá „správnou investici“, ale pomáhá pochopit souvislosti, položit lepší otázky a rozhodovat se bez zbytečného tlaku.</p></div>
+            <div className="founder-detail-panel"><Sparkles className="size-6 text-brand-yellow" /><h3>Proč jsou knihy názorné</h3><p>Více než 15 let se věnuji vizuální tvorbě, komunikaci a převádění složitých témat do srozumitelné podoby. Stejný princip používám i tady: méně odborné mlhy, více příkladů, obrazových souvislostí a jasné struktury.</p><blockquote>„Nechci, abyste věřili mně. Chci, abyste díky souvislostem dokázali lépe posoudit, čemu věřit.“</blockquote></div>
           </div>
-
-          <div className="pricing-trust"><ShieldCheck /><div><strong>Žádná falešná původní cena.</strong><p>Porovnání vychází pouze ze skutečného součtu samostatných knih a sad. Digitální doručení, bez předplatného a bez následného prodejního hovoru.</p></div></div>
-
-          <details id="jednotlive-ebooky" className="individual-pricing">
-            <summary>Chci koupit pouze jeden e-book <ChevronDown /></summary>
-            <div className="individual-pricing-content">
-              <div><p className="book-kicker">Hlavní knihy • 690 Kč za titul</p><div className="individual-grid individual-grid-main">{[{ image: '/books/financial-restart-hq.jpg', title: 'Finanční (Re)Start', text: '225 stran • základní mapa osobních financí' }, { image: '/books/investor-dictionary-hq.jpg', title: 'Slovník investora', text: '224 stran • referenční příručka pojmů' }].map((book) => <article key={book.title} className="individual-book"><img src={book.image} width="1200" height="1818" alt={`Obálka ${book.title}`} /><div><h3>{book.title}</h3><p>{book.text}</p><strong>690 Kč</strong><button type="button" disabled>Vybrat e-book</button></div></article>)}</div></div>
-              <div><p className="book-kicker">Praktické e-booky • 249 Kč za titul</p><div className="individual-grid">{practicalBooks.map((book) => <article key={book.title} className="individual-book"><img src={book.image} width="240" height="364" alt={`Obálka ${book.title}`} /><div><h3>{book.title}</h3><p>{book.use}</p><strong>249 Kč</strong><button type="button" disabled>Vybrat e-book</button></div></article>)}</div></div>
-            </div>
-          </details>
-
-          <div className="mt-7 flex items-center justify-center gap-2 text-xs text-slate-500"><CircleDollarSign className="size-4" /> Tlačítka jsou zatím náhledová. Bezpečná platba přes Stripe bude napojena přímo zde.</div>
-        </div>
+          <div className="founder-card-footer"><ShieldCheck /><span><strong>Nezávislý vzdělávací projekt.</strong> Bez provizí za finanční produkty, bez investičních doporučení a bez tlaku na rychlé rozhodnutí.</span></div>
+        </details>
       </section>
+
+      <OfferStore practicalBooks={practicalBooks} />
 
       <section id="faq" className="bg-[#f5f8f6] px-5 py-22 lg:px-8"><div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[.62fr_1.38fr]"><div><p className="eyebrow">Časté otázky</p><h2 className="section-title">Vše důležité před rozhodnutím.</h2><p className="section-lead">Přesně víte, co kupujete — a také co tento balíček neslibuje.</p></div><div className="space-y-3">{faqs.map(([question, answer]) => <details key={question} className="group rounded-2xl border border-slate-200 bg-white px-5 py-1 open:shadow-[0_10px_30px_rgba(3,23,42,.04)]"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-bold text-brand-navy marker:content-none">{question}<ChevronDown className="size-4 shrink-0 text-slate-400 transition group-open:rotate-180" /></summary><p className="border-t border-slate-100 pb-5 pt-4 text-sm leading-6 text-slate-600">{answer}</p></details>)}</div></div></section>
 

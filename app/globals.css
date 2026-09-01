@@ -281,8 +281,140 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply mt-0.5 text-base font-extrabold;
   }
 
+  .founder-card {
+    @apply scroll-mt-8 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(3,23,42,.07)];
+  }
+
+  .founder-card > summary {
+    @apply grid cursor-pointer list-none items-center gap-6 p-6 marker:content-none sm:p-8 md:grid-cols-[180px_1fr_auto] md:gap-8;
+  }
+
+  .founder-card > summary > img {
+    @apply aspect-square w-full max-w-[180px] rounded-3xl object-cover shadow-[0_18px_40px_rgba(3,23,42,.18)];
+  }
+
+  .founder-card > summary h2 {
+    @apply mt-2 text-3xl font-extrabold tracking-tight text-brand-navy;
+  }
+
+  .founder-card > summary p:not(.eyebrow) {
+    @apply mt-3 max-w-3xl leading-7 text-slate-600;
+  }
+
+  .founder-tags {
+    @apply mt-4 flex flex-wrap gap-2;
+  }
+
+  .founder-tags span {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-brand-green/10 px-3 py-1.5 text-xs font-extrabold text-[#087a46];
+  }
+
+  .founder-tags svg {
+    @apply size-3.5;
+  }
+
+  .founder-open-label {
+    @apply inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-brand-navy/15 px-4 text-sm font-extrabold text-brand-navy transition group-open:bg-brand-navy group-open:text-white;
+  }
+
+  .founder-open-label svg {
+    @apply size-4 transition;
+  }
+
+  .founder-card[open] .founder-open-label svg {
+    @apply rotate-180;
+  }
+
+  .founder-card[open] .founder-open-label {
+    @apply bg-brand-navy text-white;
+  }
+
+  .founder-card-detail {
+    @apply grid gap-7 border-t border-slate-200 bg-[#f8faf8] p-6 sm:p-8 lg:grid-cols-[1.15fr_.85fr];
+  }
+
+  .founder-card-detail h3 {
+    @apply mt-3 text-2xl font-extrabold leading-8 tracking-tight text-brand-navy;
+  }
+
+  .founder-card-detail p {
+    @apply mt-4 leading-7 text-slate-600;
+  }
+
+  .founder-detail-panel {
+    @apply rounded-3xl bg-brand-navy p-6 text-white sm:p-7;
+  }
+
+  .founder-detail-panel h3 {
+    @apply text-white;
+  }
+
+  .founder-detail-panel p {
+    @apply text-slate-300;
+  }
+
+  .founder-detail-panel blockquote {
+    @apply mt-5 border-l-2 border-brand-green pl-4 text-sm font-bold italic leading-6 text-white;
+  }
+
+  .founder-card-footer {
+    @apply flex items-start gap-3 border-t border-slate-200 bg-white px-6 py-5 text-sm leading-6 text-slate-600 sm:px-8;
+  }
+
+  .founder-card-footer > svg {
+    @apply mt-1 size-5 shrink-0 text-[#087a46];
+  }
+
+  .founder-card-footer strong {
+    @apply text-brand-navy;
+  }
+
   .definition-card {
     @apply relative overflow-hidden rounded-3xl border p-7 sm:p-8;
+  }
+
+  .independent-note {
+    @apply grid items-center gap-5 rounded-3xl border border-brand-green/25 bg-[#f1fff7] p-6 shadow-[0_18px_50px_rgba(3,23,42,.05)] md:grid-cols-[64px_1fr_auto] md:p-7;
+  }
+
+  .independent-note-mark {
+    @apply grid size-16 place-items-center rounded-2xl bg-brand-navy;
+  }
+
+  .independent-note-mark img {
+    @apply size-14 object-contain;
+  }
+
+  .independent-note h2 {
+    @apply mt-1 text-xl font-extrabold tracking-tight text-brand-navy sm:text-2xl;
+  }
+
+  .independent-note-copy > p:last-of-type {
+    @apply mt-2 max-w-4xl text-sm leading-6 text-slate-600;
+  }
+
+  .independent-badges {
+    @apply mt-4 flex flex-wrap items-center gap-2;
+  }
+
+  .independent-badges span {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-brand-green/30 bg-white px-3 py-1.5 text-xs font-extrabold text-[#087a46] shadow-sm;
+  }
+
+  .independent-badges span svg {
+    @apply size-3.5;
+  }
+
+  .independent-badges strong {
+    @apply px-1 text-xs font-extrabold text-brand-navy;
+  }
+
+  .independent-note > a {
+    @apply inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-brand-navy/15 bg-white px-4 text-sm font-extrabold text-brand-navy transition hover:border-brand-green hover:bg-brand-navy hover:text-white;
+  }
+
+  .independent-note > a svg {
+    @apply size-4;
   }
 
   .definition-card-no {
@@ -493,8 +625,7 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply h-32 w-auto rounded-md object-cover shadow-[0_12px_28px_rgba(3,23,42,.2)];
   }
 
-  .pricing-covers-main img:first-child,
-  .pricing-covers-complete img:first-child {
+  .pricing-covers-main img:first-child {
     @apply translate-x-3 -rotate-6;
   }
 
@@ -502,12 +633,44 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply -translate-x-3 rotate-6;
   }
 
-  .pricing-covers-complete img:nth-child(2) {
-    @apply relative z-10 h-36;
+  .pricing-covers-complete {
+    @apply h-48 flex-col gap-2;
   }
 
-  .pricing-covers-complete img:last-child {
+  .complete-main-covers {
+    @apply flex h-32 items-end justify-center;
+  }
+
+  .complete-main-covers img {
+    @apply h-28 w-auto rounded-md object-cover shadow-[0_12px_28px_rgba(0,0,0,.34)];
+  }
+
+  .complete-main-covers img:first-child {
+    @apply translate-x-3 -rotate-6;
+  }
+
+  .complete-main-covers img:nth-child(2) {
+    @apply relative z-10 h-32;
+  }
+
+  .complete-main-covers img:last-child {
     @apply -translate-x-3 rotate-6;
+  }
+
+  .complete-practical-covers {
+    @apply relative z-20 flex h-12 items-end justify-center;
+  }
+
+  .complete-practical-covers img {
+    @apply -mx-1 h-11 w-auto rounded-sm object-cover shadow-[0_7px_16px_rgba(0,0,0,.35)];
+  }
+
+  .complete-practical-covers img:nth-child(odd) {
+    @apply -rotate-2;
+  }
+
+  .complete-practical-covers img:nth-child(even) {
+    @apply rotate-2;
   }
 
   .pricing-covers-practical {
@@ -574,15 +737,24 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply text-brand-green;
   }
 
-  .pricing-card > button {
-    @apply mt-5 inline-flex h-12 cursor-not-allowed items-center justify-center gap-2 rounded-xl bg-brand-navy px-4 text-sm font-extrabold text-white opacity-90;
+  .offer-add-button {
+    @apply mt-5 inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-xl bg-brand-navy px-4 text-sm font-extrabold text-white shadow-[0_10px_24px_rgba(3,23,42,.12)] transition hover:-translate-y-0.5 hover:bg-[#0b2944];
   }
 
-  .pricing-card-featured > button {
+  .offer-add-button-featured {
     @apply bg-brand-green text-brand-navy;
   }
 
-  .pricing-card > button svg {
+  .offer-add-button-featured:hover {
+    @apply bg-[#46f394];
+  }
+
+  .offer-add-button-selected,
+  .offer-add-button-featured.offer-add-button-selected {
+    @apply bg-[#087a46] text-white;
+  }
+
+  .offer-add-button svg {
     @apply size-4;
   }
 
@@ -647,7 +819,27 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .individual-book button {
-    @apply mt-2 h-9 cursor-not-allowed rounded-lg bg-brand-navy px-3 text-xs font-bold text-white opacity-85;
+    @apply mt-2 h-9 cursor-pointer rounded-lg bg-brand-navy px-3 text-xs font-bold text-white transition hover:bg-[#0b2944];
+  }
+
+  .individual-book button[aria-pressed='true'] {
+    @apply bg-[#087a46];
+  }
+
+  .cart-fab {
+    @apply fixed bottom-24 right-4 z-40 inline-flex h-14 items-center gap-2 rounded-full border border-brand-green/40 bg-brand-navy px-4 text-sm font-extrabold text-white shadow-[0_18px_45px_rgba(3,23,42,.28)] transition hover:-translate-y-1 sm:bottom-6 sm:right-6;
+  }
+
+  .cart-fab > svg {
+    @apply size-5 text-brand-green;
+  }
+
+  .cart-fab > span {
+    @apply grid size-6 place-items-center rounded-full bg-brand-green text-xs text-brand-navy;
+  }
+
+  .cart-fab > strong {
+    @apply border-l border-white/15 pl-2;
   }
 }
 
