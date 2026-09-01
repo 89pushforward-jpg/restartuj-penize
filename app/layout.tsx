@@ -10,20 +10,20 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://restartuj-penize.cesefome.chatgpt.site'),
-  title: 'Restartuj Peníze | Finance, kterým budete rozumět',
-  description: 'Praktické e-booky o osobních financích, investičních pojmech a ochraně před drahými chybami — bez slibů rychlého zbohatnutí.',
+  title: 'Restartuj Peníze | Finance, kterým konečně rozumíte',
+  description: 'Dvě hlavní knihy, bonus Mindset a šest praktických e-booků pro srozumitelnější finanční rozhodování.',
   openGraph: {
-    title: 'Rozumějte svým penězům | Restartuj Peníze',
-    description: '9 praktických e-booků pro jistější orientaci v každodenních financích.',
+    title: 'Restartuj Peníze | Finance, kterým konečně rozumíte',
+    description: 'Kompletní knihovna finančních základů: 2 hlavní knihy, bonus Mindset a 6 praktických e-booků.',
     type: 'website',
     locale: 'cs_CZ',
-    images: [{ url: '/og.png', width: 1728, height: 909, alt: 'Rozumějte svým penězům — Restartuj Peníze' }],
+    images: [{ url: '/og-v2.png', width: 1728, height: 909, alt: 'Restartuj Peníze — Finance, kterým konečně rozumíte' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rozumějte svým penězům | Restartuj Peníze',
-    description: '9 praktických e-booků pro jistější orientaci v každodenních financích.',
-    images: ['/og.png'],
+    title: 'Restartuj Peníze | Finance, kterým konečně rozumíte',
+    description: '2 hlavní knihy, bonus Mindset a 6 praktických e-booků.',
+    images: ['/og-v2.png'],
   },
 };
 

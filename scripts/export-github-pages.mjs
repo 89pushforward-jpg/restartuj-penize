@@ -1,9 +1,15 @@
-import { cp, mkdir, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const projectRoot = process.cwd();
 const outputDir = join(projectRoot, 'docs');
 const clientDir = join(projectRoot, 'dist', 'client');
+const cssDir = join(clientDir, '_next', 'static', 'css');
+const cssFile = (await readdir(cssDir)).find((file) => file.startsWith('index.') && file.endsWith('.css'));
+
+if (!cssFile) {
+  throw new Error('Built stylesheet was not found');
+}
 
 const response = await fetch('http://localhost:3000/');
 if (!response.ok) {
@@ -14,12 +20,14 @@ let html = await response.text();
 html = html
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
   .replace(/<link\s+rel="modulepreload"[^>]*\/?>/gi, '')
-  .replace(/<link\s+rel="stylesheet"\s+href="\/app\/globals\.css"[^>]*\/?>/i, '<link rel="stylesheet" href="./_next/static/css/index.Bt9cvn_p.css"/>')
-  .replaceAll('href="/og.png"', 'href="./og.png"')
+  .replace(/<link\s+rel="stylesheet"\s+href="\/app\/globals\.css"[^>]*\/?>/i, `<link rel="stylesheet" href="./_next/static/css/${cssFile}"/>`)
+  .replaceAll('href="/og-v2.png"', 'href="./og-v2.png"')
   .replaceAll('href="/_next/', 'href="./_next/')
   .replaceAll('src="/_next/', 'src="./_next/')
   .replaceAll('href="/favicon.svg"', 'href="./favicon.svg"')
-  .replaceAll('src="/og.png"', 'src="./og.png"');
+  .replaceAll('src="/og-v2.png"', 'src="./og-v2.png"')
+  .replaceAll('src="/brand/', 'src="./brand/')
+  .replaceAll('src="/books/', 'src="./books/');
 
 await mkdir(outputDir, { recursive: true });
 await cp(clientDir, outputDir, { recursive: true, force: true });
