@@ -1,4 +1,4 @@
-import { cp, mkdir, readdir, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const projectRoot = process.cwd();
@@ -11,7 +11,7 @@ if (!cssFile) {
   throw new Error('Built stylesheet was not found');
 }
 
-const response = await fetch('http://localhost:3000/');
+const response = await fetch(process.env.EXPORT_SOURCE_URL ?? 'http://127.0.0.1:3001/');
 if (!response.ok) {
   throw new Error(`Local site returned HTTP ${response.status}`);
 }
@@ -27,8 +27,10 @@ html = html
   .replaceAll('href="/favicon.svg"', 'href="./favicon.svg"')
   .replaceAll('src="/og-v2.png"', 'src="./og-v2.png"')
   .replaceAll('src="/brand/', 'src="./brand/')
-  .replaceAll('src="/books/', 'src="./books/');
+  .replaceAll('src="/books/', 'src="./books/')
+  .replaceAll('src="/story/', 'src="./story/');
 
+await rm(outputDir, { recursive: true, force: true });
 await mkdir(outputDir, { recursive: true });
 await cp(clientDir, outputDir, { recursive: true, force: true });
 await writeFile(join(outputDir, 'index.html'), html, 'utf8');

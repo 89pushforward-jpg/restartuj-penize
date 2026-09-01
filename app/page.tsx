@@ -4,16 +4,19 @@ import {
   Check,
   ChevronDown,
   CircleDollarSign,
+  Compass,
   FileCheck2,
   Gauge,
   Mail,
+  Route,
   SearchCheck,
   ShieldCheck,
   Sparkles,
+  X,
   WalletCards,
 } from 'lucide-react';
 
-import { buttonVariants } from '@/components/ui/button';
+import { BookOfferDialog } from '@/components/book-offer-dialog';
 import { cn } from '@/lib/utils';
 
 const proof = [
@@ -56,19 +59,16 @@ const faqs = [
   ['Jde o předplatné?', 'Ne. Cena je jednorázová a nevzniká žádná automaticky obnovovaná platba.'],
 ];
 
-const primaryCta = cn(
-  buttonVariants({ size: 'lg' }),
-  'h-13 rounded-xl bg-[#18e878] px-6 text-base font-extrabold text-[#03172a] shadow-[0_14px_42px_rgba(24,232,120,.22)] hover:bg-[#46f394]',
-);
+const primaryCta = 'group inline-flex h-13 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#18e878] px-6 text-base font-extrabold text-[#03172a] shadow-[0_14px_42px_rgba(24,232,120,.22)] transition hover:bg-[#46f394]';
 
 function BrandLogo({ compact = false }: { compact?: boolean }) {
   return (
     <img
-      src="/brand/logo-gradient.webp"
-      width="800"
-      height="450"
+      src="/brand/logo-official.png"
+      width="1328"
+      height="512"
       alt="Restartuj Peníze"
-      className={compact ? 'h-11 w-auto max-w-[190px] object-contain object-left' : 'h-auto w-full max-w-[390px]'}
+      className={compact ? 'brand-logo-compact' : 'brand-logo-hero'}
     />
   );
 }
@@ -77,7 +77,7 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
       <nav className="border-b border-white/10 bg-brand-navy text-white">
-        <div className="mx-auto flex h-19 max-w-7xl items-center justify-between px-5 lg:px-8">
+        <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#top" aria-label="Restartuj Peníze — nahoru"><BrandLogo compact /></a>
           <div className="hidden items-center gap-7 text-sm text-slate-300 md:flex">
             <a href="#hlavni-knihy" className="transition hover:text-white">Hlavní knihy</a>
@@ -94,10 +94,10 @@ export default function Home() {
           <div>
             <div className="mb-7 w-fit rounded-2xl border border-white/10 bg-white/[.035] px-4 py-2"><BrandLogo /></div>
             <p className="inline-flex items-center gap-2 rounded-full border border-brand-green/25 bg-brand-green/8 px-3 py-1.5 text-sm font-semibold text-brand-green">
-              <ShieldCheck className="size-4" /> Bez prodeje finančních produktů
+              <Compass className="size-4" /> Mapa pro chvíle, kdy ve financích chybí jasno
             </p>
-            <h1 className="mt-6 max-w-3xl text-balance text-4xl font-extrabold leading-[1.03] tracking-[-.045em] sm:text-5xl lg:text-6xl">Finance, kterým konečně rozumíte.</h1>
-            <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-300">Dvě rozsáhlé příručky, bonus k investičnímu mindsetu a šest praktických e-booků pro rozhodnutí, která řešíte v běžném životě.</p>
+            <h1 className="mt-6 max-w-3xl text-balance text-4xl font-extrabold leading-[1.13] tracking-[-.025em] sm:text-5xl lg:text-6xl">Když jsou finance změť pojmů, rad a nabídek, potřebujete mapu.</h1>
+            <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-300">Restartuj Peníze skládá finanční základy do srozumitelného systému. Abyste věděli, kde začít, čemu rozumět a na co se zeptat dřív, než se rozhodnete.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a href="#nabidka" className={primaryCta}>Získat balíček za 1 490 Kč <ArrowRight data-icon="inline-end" /></a>
               <a href="#hlavni-knihy" className="inline-flex h-13 items-center justify-center rounded-xl border border-white/15 px-5 text-sm font-bold text-white transition hover:border-white/30 hover:bg-white/5">Prohlédnout e-booky</a>
@@ -123,6 +123,59 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#f5f8f6] px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.04fr_.96fr] lg:items-center">
+          <div className="story-image-wrap">
+            <img src="/story/financial-confusion.png" width="1586" height="1000" alt="Ilustrace člověka, který se snaží zorientovat v množství finančních informací" />
+            <div className="story-image-note"><span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand-yellow text-brand-navy"><X className="size-4" /></span><p><strong>Nejste špatní na finance.</strong><br />Jen se snažíte rozhodovat bez přehledné mapy.</p></div>
+          </div>
+          <div>
+            <p className="eyebrow">Problém není nedostatek informací</p>
+            <h2 className="section-title">Problém je, že všechno přichází najednou — a málokdo vysvětlí, co s čím souvisí.</h2>
+            <p className="section-lead">Jedna rada říká šetřit, druhá investovat. Smlouva je plná pojmů. Každý nabízí jiné řešení a vy nevíte, podle čeho ho posoudit.</p>
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              {[
+                'Nevíte, kde začít a co má přednost.',
+                'Pojmy znáte, ale nedávají vám celek.',
+                'Bojíte se přehlédnout důležitou podmínku.',
+                'Rozhodnutí odkládáte, protože si nejste jistí.',
+              ].map((item) => <div key={item} className="flex gap-3 rounded-xl border border-slate-200 bg-white p-4 text-sm font-semibold leading-6 text-slate-700"><span className="mt-2 size-2 shrink-0 rounded-full bg-brand-yellow" />{item}</div>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">Jasné vymezení</p>
+            <h2 className="section-title">Ne další hlas, který vám říká, co koupit. Mapa, podle které si uděláte jasno sami.</h2>
+          </div>
+          <div className="mt-11 grid gap-6 lg:grid-cols-2">
+            <article className="definition-card definition-card-no">
+              <div className="definition-icon"><X className="size-5" /></div>
+              <p className="book-kicker text-rose-700">Co Restartuj Peníze není</p>
+              <h3>Rychlá zkratka k bohatství ani prodej konkrétního produktu.</h3>
+              <ul>
+                {['žádné signály, co právě koupit nebo prodat', 'žádné sliby jistých výnosů a rychlého zbohatnutí', 'žádný tlak, umělý časovač ani následný prodejní hovor'].map((item) => <li key={item}><X />{item}</li>)}
+              </ul>
+            </article>
+            <article className="definition-card definition-card-yes">
+              <div className="definition-icon"><Route className="size-5" /></div>
+              <p className="book-kicker">Co Restartuj Peníze je</p>
+              <h3>Uspořádaná knihovna, která mění chaos v další konkrétní krok.</h3>
+              <ul>
+                {['srozumitelná mapa finančních základů a souvislostí', 'referenční slovník pro pojmy, které potkáváte v praxi', 'kontrolní otázky pro smlouvy, poradce, brokery i rozpočet'].map((item) => <li key={item}><Check />{item}</li>)}
+              </ul>
+            </article>
+          </div>
+          <div className="map-panel">
+            <img src="/story/map-out.png" width="1586" height="1000" alt="Ilustrace přehledné cesty z finančního zmatku k uspořádanému systému" />
+            <div className="map-panel-copy"><div className="flex items-center gap-3"><img src="/brand/mark-official.png" width="960" height="960" alt="" className="size-14 object-contain" /><span className="inline-flex rounded-full bg-brand-green/12 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[.12em] text-brand-green">Mapa ven</span></div><h3>Nejdřív pochopit celek. Potom řešit konkrétní situaci.</h3><p>Finanční (Re)Start vytvoří základ. Slovník investora pomůže s pojmy. Šest praktických průvodců otevřete právě tehdy, když řešíte konkrétní rozhodnutí.</p><div className="mt-6 flex flex-wrap gap-2 text-xs font-bold text-slate-200"><span>1. Zorientovat se</span><ArrowRight /><span>2. Pojmenovat otázku</span><ArrowRight /><span>3. Rozhodnout se bez tlaku</span></div></div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#f5f8f6] px-5 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl"><p className="eyebrow">Pro chvíle, kdy nestačí jen tušit</p><h2 className="section-title">Udělejte si jasno dřív, než podepíšete smlouvu nebo pošlete peníze.</h2><p className="section-lead">Balíček neslibuje zázračné výnosy. Dává vám jazyk, souvislosti a kontrolní otázky, se kterými se můžete rozhodovat informovaněji.</p></div>
@@ -138,11 +191,11 @@ export default function Home() {
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <article className="flagship-card">
               <img src="/books/financial-restart.png" width="240" height="364" alt="Obálka knihy Finanční (Re)Start" className="flagship-cover" />
-              <div><span className="book-kicker">1. díl • 225 stran</span><h3>Finanční (Re)Start</h3><p>Základní mapa osobních financí od první výplaty po rozpočet, dluhy, rezervu, ekonomické souvislosti a budování majetku.</p><ul><li><Check /> srovnáte si základní pojmy a souvislosti</li><li><Check /> propojíte rozpočet, práci, dluhy a investování</li><li><Check /> získáte pevnější základ pro další rozhodování</li></ul></div>
+              <div><span className="book-kicker">1. díl • 225 stran</span><h3>Finanční (Re)Start</h3><p>Základní mapa osobních financí od první výplaty po rozpočet, dluhy, rezervu, ekonomické souvislosti a budování majetku.</p><ul><li><Check /> srovnáte si základní pojmy a souvislosti</li><li><Check /> propojíte rozpočet, práci, dluhy a investování</li><li><Check /> získáte pevnější základ pro další rozhodování</li></ul><BookOfferDialog title="Finanční (Re)Start" subtitle="Hlavní kniha • první díl" cover="/books/financial-restart.png" pages="225 stran" description="Uspořádaný začátek pro člověka, který nechce skládat vlastní finance z náhodných rad. Kniha propojuje každodenní rozhodnutí s principy, které dávají smysl i bez ekonomického vzdělání." reasons={['Uvidíte finance jako celek, ne jako izolované produkty.', 'Snáz určíte, které téma potřebujete řešit jako první.', 'Získáte společný jazyk pro rozhovor s bankou nebo poradcem.']} contents={['příjmy, výdaje, rozpočet a finanční rezerva', 'dluhy, úroky, inflace a ekonomické souvislosti', 'základy investování, riziko a budování majetku']} sampleLabel="Tyto tři ukázky jsou přímo z knihy Finanční (Re)Start." /></div>
             </article>
             <article className="flagship-card">
               <img src="/books/investor-dictionary.png" width="240" height="364" alt="Obálka knihy Slovník investora" className="flagship-cover" />
-              <div><span className="book-kicker">2. díl • 224 stran</span><h3>Slovník investora</h3><p>Srozumitelná referenční příručka investičních pojmů, nástrojů a principů, ke které se můžete průběžně vracet.</p><ul><li><Check /> lépe se zorientujete v článcích a nabídkách</li><li><Check /> dohledáte si neznámý pojem v souvislostech</li><li><Check /> snáze poznáte, na co se potřebujete zeptat</li></ul></div>
+              <div><span className="book-kicker">2. díl • 224 stran</span><h3>Slovník investora</h3><p>Srozumitelná referenční příručka investičních pojmů, nástrojů a principů, ke které se můžete průběžně vracet.</p><ul><li><Check /> lépe se zorientujete v článcích a nabídkách</li><li><Check /> dohledáte si neznámý pojem v souvislostech</li><li><Check /> snáze poznáte, na co se potřebujete zeptat</li></ul><BookOfferDialog title="Slovník investora" subtitle="Hlavní kniha • druhý díl" cover="/books/investor-dictionary.png" pages="224 stran" description="Referenční příručka pro chvíle, kdy na vás z článku, smlouvy nebo nabídky vyskočí pojem, kterému nerozumíte. Neučíte se definice nazpaměť — dohledáte si je ve chvíli, kdy je potřebujete." reasons={['Nemusíte předstírat, že rozumíte odbornému jazyku.', 'Rychleji odhalíte, co si potřebujete ověřit nebo nechat vysvětlit.', 'Knihu používáte opakovaně jako praktickou referenci.']} contents={['investiční nástroje, trhy a typy aktiv', 'výnos, riziko, poplatky, diverzifikace a likvidita', 'pojmy, které se objevují u brokerů, fondů a smluv']} sampleLabel="Ukázky ukazují skutečný styl a zpracování hlavní série; zobrazené strany jsou z prvního dílu." /></div>
             </article>
           </div>
         </div>

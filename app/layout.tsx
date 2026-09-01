@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
+import { Manrope, Source_Sans_3 } from 'next/font/google';
 
 import './globals.css';
 
 const manrope = Manrope({
   variable: '--font-manrope',
+  subsets: ['latin', 'latin-ext'],
+});
+
+const sourceSans = Source_Sans_3({
+  variable: '--font-source-sans',
   subsets: ['latin', 'latin-ext'],
 });
 
@@ -30,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="cs">
-      <body className={`${manrope.variable} antialiased`}>{children}</body>
+      <body className={`${manrope.variable} ${sourceSans.variable} antialiased`}>{children}</body>
     </html>
   );
 }
