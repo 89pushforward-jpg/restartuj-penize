@@ -217,6 +217,46 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-2xl border border-white/12 bg-brand-navy/92 p-4 text-sm leading-5 text-slate-200 shadow-xl backdrop-blur sm:inset-x-6 sm:bottom-6 sm:text-base sm:leading-6;
   }
 
+  .section-illustration {
+    @apply relative overflow-hidden rounded-3xl bg-brand-navy shadow-[0_22px_60px_rgba(3,23,42,.14)];
+  }
+
+  .section-illustration img {
+    @apply aspect-[16/10] w-full object-cover;
+  }
+
+  .section-illustration figcaption {
+    @apply absolute inset-x-4 bottom-4 rounded-xl border border-white/10 bg-brand-navy/88 px-4 py-3 text-sm font-semibold leading-5 text-slate-100 shadow-lg backdrop-blur sm:inset-x-5 sm:bottom-5;
+  }
+
+  .section-illustration-dark {
+    @apply border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,.28)];
+  }
+
+  .founder-visual {
+    @apply relative min-h-72 overflow-hidden rounded-2xl bg-brand-navy shadow-[0_18px_48px_rgba(3,23,42,.16)];
+  }
+
+  .founder-visual > img {
+    @apply h-full min-h-72 w-full object-cover;
+  }
+
+  .founder-visual figcaption {
+    @apply absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-xl border border-white/10 bg-brand-navy/90 p-4 text-white backdrop-blur;
+  }
+
+  .founder-visual figcaption span {
+    @apply flex flex-col;
+  }
+
+  .founder-visual figcaption small {
+    @apply text-xs text-slate-400;
+  }
+
+  .founder-visual figcaption strong {
+    @apply mt-0.5 text-base font-extrabold;
+  }
+
   .definition-card {
     @apply relative overflow-hidden rounded-3xl border p-7 sm:p-8;
   }

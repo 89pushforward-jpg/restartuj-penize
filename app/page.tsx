@@ -126,7 +126,7 @@ export default function Home() {
       <section className="bg-[#f5f8f6] px-5 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.04fr_.96fr] lg:items-center">
           <div className="story-image-wrap">
-            <img src="/story/financial-confusion.png" width="1586" height="1000" alt="Ilustrace člověka, který se snaží zorientovat v množství finančních informací" />
+            <img src="/story/financial-confusion-web.jpg" width="1586" height="1000" alt="Ilustrace člověka, který se snaží zorientovat v množství finančních informací" />
             <div className="story-image-note"><span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand-yellow text-brand-navy"><X className="size-4" /></span><p><strong>Nejste špatní na finance.</strong><br />Jen se snažíte rozhodovat bez přehledné mapy.</p></div>
           </div>
           <div>
@@ -170,7 +170,7 @@ export default function Home() {
             </article>
           </div>
           <div className="map-panel">
-            <img src="/story/map-out.png" width="1586" height="1000" alt="Ilustrace přehledné cesty z finančního zmatku k uspořádanému systému" />
+            <img src="/story/map-out-web.jpg" width="1586" height="1000" alt="Ilustrace přehledné cesty z finančního zmatku k uspořádanému systému" />
             <div className="map-panel-copy"><div className="flex items-center gap-3"><img src="/brand/mark-official.png" width="960" height="960" alt="" className="size-14 object-contain" /><span className="inline-flex rounded-full bg-brand-green/12 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[.12em] text-brand-green">Mapa ven</span></div><h3>Nejdřív pochopit celek. Potom řešit konkrétní situaci.</h3><p>Finanční (Re)Start vytvoří základ. Slovník investora pomůže s pojmy. Šest praktických průvodců otevřete právě tehdy, když řešíte konkrétní rozhodnutí.</p><div className="mt-6 flex flex-wrap gap-2 text-xs font-bold text-slate-200"><span>1. Zorientovat se</span><ArrowRight /><span>2. Pojmenovat otázku</span><ArrowRight /><span>3. Rozhodnout se bez tlaku</span></div></div>
           </div>
         </div>
@@ -178,7 +178,10 @@ export default function Home() {
 
       <section className="bg-[#f5f8f6] px-5 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl"><p className="eyebrow">Pro chvíle, kdy nestačí jen tušit</p><h2 className="section-title">Udělejte si jasno dřív, než podepíšete smlouvu nebo pošlete peníze.</h2><p className="section-lead">Balíček neslibuje zázračné výnosy. Dává vám jazyk, souvislosti a kontrolní otázky, se kterými se můžete rozhodovat informovaněji.</p></div>
+          <div className="grid gap-9 lg:grid-cols-[.84fr_1.16fr] lg:items-center">
+            <div><p className="eyebrow">Pro chvíle, kdy nestačí jen tušit</p><h2 className="section-title">Udělejte si jasno dřív, než podepíšete smlouvu nebo pošlete peníze.</h2><p className="section-lead">Balíček neslibuje zázračné výnosy. Dává vám jazyk, souvislosti a kontrolní otázky, se kterými se můžete rozhodovat informovaněji.</p></div>
+            <figure className="section-illustration"><img src="/story/decision-crossroads.jpg" width="1586" height="1000" alt="Ilustrace rozcestí běžných finančních rozhodnutí" /><figcaption>Každé rozhodnutí je snazší, když víte, podle čeho ho posoudit.</figcaption></figure>
+          </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {situations.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(3,23,42,.04)]"><span className="grid size-11 place-items-center rounded-xl bg-brand-navy text-brand-green"><Icon className="size-5" /></span><h3 className="mt-5 font-bold text-brand-navy">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{text}</p></article>)}
           </div>
@@ -204,6 +207,7 @@ export default function Home() {
       <section id="obsah" className="bg-brand-navy px-5 py-22 text-white lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[1fr_.72fr] lg:items-end"><div><p className="eyebrow text-brand-green">Šest průvodců pro konkrétní situace</p><h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">Nemusíte hledat jednu odpověď v celé knihovně.</h2></div><p className="text-base leading-7 text-slate-300">Otevřete e-book k tématu, které právě řešíte. Každý titul má svou skutečnou obálku, přesný účel a je součástí kompletního balíčku.</p></div>
+          <figure className="section-illustration section-illustration-dark mt-10"><img src="/story/guide-library.jpg" width="1586" height="1000" alt="Ilustrace výběru praktického finančního průvodce podle aktuální situace" /><figcaption>Nečtete všechno najednou. Sáhnete po tématu, které právě potřebujete vyřešit.</figcaption></figure>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {practicalBooks.map((book) => <article key={book.title} className="practical-card"><img src={book.image} width="240" height="364" alt={`Obálka e-booku ${book.title}`} /><div><p className="text-xs font-bold uppercase tracking-[.14em] text-brand-green">Praktický e-book</p><h3>{book.title}</h3><p>{book.use}</p></div></article>)}
           </div>
@@ -224,12 +228,12 @@ export default function Home() {
       </section>
 
       <section className="bg-white px-5 py-22 lg:px-8">
-        <div className="mx-auto max-w-7xl"><div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:items-start"><div><p className="eyebrow">Zpětná vazba testovacích čtenářů</p><h2 className="section-title">Oceňují strukturu, příklady a čtivost.</h2><p className="section-lead">Konkrétní dojmy lidí, kteří dostali materiály k přečtení — bez anonymních hvězdiček a bez přikrášlování.</p></div><div className="grid gap-4 sm:grid-cols-2">{testimonials.map((quote, index) => <figure key={quote.name} className={cn('rounded-3xl border border-slate-200 bg-[#f8faf8] p-7', index === 2 && 'sm:col-span-2')}><blockquote className="text-lg leading-8 text-brand-navy">„{quote.text}“</blockquote><figcaption className="mt-6 flex items-center gap-3 text-sm font-bold text-slate-700"><span className="grid size-9 place-items-center rounded-full bg-brand-navy text-brand-green">{quote.name.charAt(0)}</span>{quote.name} <span className="font-normal text-slate-400">• testovací čtenář/ka</span></figcaption></figure>)}</div></div></div>
+        <div className="mx-auto max-w-7xl"><div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start"><div><p className="eyebrow">Zpětná vazba testovacích čtenářů</p><h2 className="section-title">Oceňují strukturu, příklady a čtivost.</h2><p className="section-lead">Konkrétní dojmy lidí, kteří dostali materiály k přečtení — bez anonymních hvězdiček a bez přikrášlování.</p><figure className="section-illustration mt-8"><img src="/story/readers-learning.jpg" width="1586" height="1000" alt="Ilustrace čtenářů, kteří používají finanční příručky v praxi" /><figcaption>Jeden systém, různé situace a vlastní tempo čtení.</figcaption></figure></div><div className="grid gap-4 sm:grid-cols-2">{testimonials.map((quote, index) => <figure key={quote.name} className={cn('rounded-3xl border border-slate-200 bg-[#f8faf8] p-7', index === 2 && 'sm:col-span-2')}><blockquote className="text-lg leading-8 text-brand-navy">„{quote.text}“</blockquote><figcaption className="mt-6 flex items-center gap-3 text-sm font-bold text-slate-700"><span className="grid size-9 place-items-center rounded-full bg-brand-navy text-brand-green">{quote.name.charAt(0)}</span>{quote.name} <span className="font-normal text-slate-400">• testovací čtenář/ka</span></figcaption></figure>)}</div></div></div>
       </section>
 
       <section id="o-projektu" className="bg-[#f5f8f6] px-5 py-22 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_24px_80px_rgba(3,23,42,.06)] md:grid-cols-[.58fr_1.42fr] md:p-10">
-          <div className="relative min-h-64 overflow-hidden rounded-2xl bg-brand-navy p-7 text-white"><div className="absolute -right-12 -top-12 size-48 rounded-full border-[28px] border-brand-green/15" /><Sparkles className="size-6 text-brand-yellow" /><p className="mt-20 text-sm text-slate-400">Autor projektu</p><p className="mt-1 text-2xl font-extrabold">Lukáš Zahrádka</p></div>
+          <figure className="founder-visual"><img src="/story/founder-story.jpg" width="1586" height="1000" alt="Ilustrace proměny zkušenosti se smlouvou v praktické vzdělávací materiály" /><figcaption><Sparkles className="size-5 text-brand-yellow" /><span><small>Autor projektu</small><strong>Lukáš Zahrádka</strong></span></figcaption></figure>
           <div className="self-center"><p className="eyebrow">Proč Restartuj Peníze vzniklo</p><h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-navy">Ne proto, abych vám prodal finanční produkt.</h2><p className="mt-5 leading-7 text-slate-600">Vlastní neznalost důležitých podmínek ve smlouvě mě stála více než 100 000 Kč. Začal jsem si finanční témata skládat od základů a převádět je do podoby, které rozumí i člověk bez ekonomického vzdělání.</p><p className="mt-4 leading-7 text-slate-600">Výsledkem není návod, kam investovat. Je to knihovna, která vám pomůže lépe rozumět informacím, se kterými se při finančních rozhodnutích setkáváte.</p><div className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-green/10 px-3 py-2 text-sm font-bold text-[#087a46]"><ShieldCheck className="size-4" /> Projekt neprodává finanční produkty</div></div>
         </div>
       </section>
