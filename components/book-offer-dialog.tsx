@@ -7,15 +7,14 @@ type BookOfferDialogProps = {
   reasons: string[];
   contents: string[];
   sampleLabel: string;
+  samples: { src: string; alt: string; topic: string }[];
 };
-
-const samplePages = ['/books/sample-financial-1.png', '/books/sample-financial-2.png', '/books/sample-financial-3.png'];
 
 function CheckIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true" className="mt-1 size-4 shrink-0 fill-none stroke-[#087a46] stroke-[2.5]"><path d="m5 12 4 4L19 6" /></svg>;
 }
 
-export function BookOfferDialog({ title, subtitle, cover, pages, description, reasons, contents, sampleLabel }: BookOfferDialogProps) {
+export function BookOfferDialog({ title, subtitle, cover, pages, description, reasons, contents, sampleLabel, samples }: BookOfferDialogProps) {
   const dialogId = `book-${title.toLocaleLowerCase('cs').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-')}`;
 
   return (
@@ -28,7 +27,7 @@ export function BookOfferDialog({ title, subtitle, cover, pages, description, re
           <aside className="relative overflow-hidden bg-brand-navy p-7 text-white sm:p-9">
             <div className="absolute -right-20 -top-20 size-64 rounded-full border-[38px] border-brand-green/10" />
             <span className="relative inline-flex rounded-full bg-brand-green/12 px-3 py-1.5 text-xs font-extrabold tracking-[.08em] text-brand-green">{pages} • digitální PDF</span>
-            <img src={cover} width="240" height="364" alt={`Obálka knihy ${title}`} className="relative mx-auto mt-7 w-full max-w-[230px] rounded-xl shadow-[0_28px_65px_rgba(0,0,0,.5)]" />
+            <img src={cover} width="1200" height="1818" alt={`Obálka knihy ${title}`} className="relative mx-auto mt-7 w-full max-w-[230px] rounded-xl shadow-[0_28px_65px_rgba(0,0,0,.5)]" />
             <div className="relative mt-7 rounded-2xl border border-white/10 bg-white/[.055] p-5">
               <p className="text-xs font-extrabold uppercase tracking-[.14em] text-brand-green">Součást balíčku</p>
               <p className="mt-2 text-sm leading-6 text-slate-300">Knihu získáte spolu s druhým hlavním titulem, bonusem Mindset a šesti praktickými průvodci.</p>
@@ -53,7 +52,7 @@ export function BookOfferDialog({ title, subtitle, cover, pages, description, re
 
             <div className="mt-8">
               <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end"><div><p className="book-kicker">Nahlédněte dovnitř</p><h3 className="mt-1 text-xl font-extrabold leading-7 text-brand-navy">Skutečné ukázky stran</h3></div><p className="max-w-sm text-xs leading-5 text-slate-500">{sampleLabel}</p></div>
-              <div className="mt-4 grid grid-cols-3 gap-2 rounded-2xl bg-brand-navy p-3 sm:gap-4 sm:p-4">{samplePages.map((sample, index) => <img key={sample} src={sample} width="240" height="340" alt={`Ukázka strany ${index + 1}`} className="w-full rounded-md bg-white shadow-lg" />)}</div>
+              <div className="mt-4 grid gap-4 rounded-2xl bg-brand-navy p-4 sm:grid-cols-3">{samples.map((sample) => <a key={sample.src} href={sample.src} target="_blank" rel="noreferrer" className="book-sample-link" aria-label={`${sample.alt} — otevřít ve vysokém rozlišení`}><img src={sample.src} width="1400" height="2121" alt={sample.alt} loading="lazy" /><span>{sample.topic}<small>Otevřít v plné kvalitě ↗</small></span></a>)}</div>
             </div>
 
             <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
