@@ -8,13 +8,14 @@ type BookOfferDialogProps = {
   contents: string[];
   sampleLabel: string;
   samples: { src: string; alt: string; topic: string }[];
+  individualPrice: string;
 };
 
 function CheckIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true" className="mt-1 size-4 shrink-0 fill-none stroke-[#087a46] stroke-[2.5]"><path d="m5 12 4 4L19 6" /></svg>;
 }
 
-export function BookOfferDialog({ title, subtitle, cover, pages, description, reasons, contents, sampleLabel, samples }: BookOfferDialogProps) {
+export function BookOfferDialog({ title, subtitle, cover, pages, description, reasons, contents, sampleLabel, samples, individualPrice }: BookOfferDialogProps) {
   const dialogId = `book-${title.toLocaleLowerCase('cs').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-')}`;
 
   return (
@@ -29,8 +30,9 @@ export function BookOfferDialog({ title, subtitle, cover, pages, description, re
             <span className="relative inline-flex rounded-full bg-brand-green/12 px-3 py-1.5 text-xs font-extrabold tracking-[.08em] text-brand-green">{pages} • digitální PDF</span>
             <img src={cover} width="1200" height="1818" alt={`Obálka knihy ${title}`} className="relative mx-auto mt-7 w-full max-w-[230px] rounded-xl shadow-[0_28px_65px_rgba(0,0,0,.5)]" />
             <div className="relative mt-7 rounded-2xl border border-white/10 bg-white/[.055] p-5">
-              <p className="text-xs font-extrabold uppercase tracking-[.14em] text-brand-green">Součást balíčku</p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">Knihu získáte spolu s druhým hlavním titulem, bonusem Mindset a šesti praktickými průvodci.</p>
+              <p className="text-xs font-extrabold uppercase tracking-[.14em] text-brand-green">Vyberte si způsob nákupu</p>
+              <p className="mt-2 text-2xl font-extrabold text-white">{individualPrice}</p>
+              <p className="mt-1 text-sm leading-6 text-slate-300">Samostatně, ve dvojici hlavních knih nebo jako součást kompletní knihovny.</p>
             </div>
           </aside>
 
@@ -57,7 +59,7 @@ export function BookOfferDialog({ title, subtitle, cover, pages, description, re
 
             <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm leading-6 text-slate-500">Žádné investiční tipy. Srozumitelný základ pro vlastní rozhodování.</p>
-              <a href="#nabidka" className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-brand-navy px-5 text-sm font-extrabold text-white transition hover:bg-[#0b2944]">Zobrazit celý balíček <span aria-hidden="true">→</span></a>
+              <a href="#nabidka" className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-brand-navy px-5 text-sm font-extrabold text-white transition hover:bg-[#0b2944]">Zobrazit možnosti nákupu <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </div>
