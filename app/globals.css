@@ -619,11 +619,11 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .shield-offer-covers {
-    @apply flex h-72 items-center justify-center overflow-hidden px-6 sm:h-80 lg:px-2;
+    @apply flex h-64 items-center justify-center overflow-visible px-5 sm:h-72 lg:px-2;
   }
 
   .shield-offer-covers img {
-    @apply -mx-3 h-56 w-auto rounded-lg object-cover shadow-[0_18px_38px_rgba(69,10,10,.28)] sm:h-64;
+    @apply -mx-1.5 h-44 w-auto shrink-0 rounded-lg object-contain shadow-[0_18px_38px_rgba(69,10,10,.28)] sm:h-52 lg:h-44 xl:h-48;
   }
 
   .shield-offer-covers img:nth-child(odd) {
@@ -673,11 +673,12 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .pricing-card-map {
-    @apply border-amber-300 bg-[#fffbed] shadow-[0_20px_60px_rgba(161,98,7,.13)];
+    @apply border-amber-500 shadow-[0_22px_65px_rgba(161,98,7,.22)];
+    background: linear-gradient(145deg, #fff8d6 0%, #f8dc6f 58%, #e8ad17 100%);
   }
 
   .pricing-card-map::before {
-    @apply bg-gradient-to-r from-amber-700 via-brand-yellow to-amber-400;
+    background: linear-gradient(90deg, #8a5a00 0%, #d99b00 42%, #ffd325 72%, #b97700 100%);
   }
 
   .pricing-card-featured {
@@ -707,11 +708,11 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
 
   .pricing-card-map .pricing-label,
   .pricing-card-map .pricing-total span {
-    @apply text-amber-800;
+    @apply text-amber-950;
   }
 
   .pricing-card-map > ul svg {
-    @apply text-amber-700;
+    @apply text-amber-900;
   }
 
   .pricing-card-featured .pricing-label {
