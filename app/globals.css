@@ -577,6 +577,79 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply block px-2.5 py-2.5 text-[11px] font-bold leading-4 text-slate-100;
   }
 
+  .shield-offer {
+    @apply relative mt-12 grid overflow-hidden rounded-3xl border border-red-200 bg-[#fff8f6] shadow-[0_22px_70px_rgba(127,29,29,.11)] lg:grid-cols-[1.05fr_1fr_.52fr] lg:items-center;
+  }
+
+  .shield-offer::before {
+    content: '';
+    @apply absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-red-500 via-orange-500 to-brand-yellow;
+  }
+
+  .shield-offer-copy {
+    @apply p-7 pl-9 sm:p-9 sm:pl-11;
+  }
+
+  .shield-label {
+    @apply inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.13em] text-red-700;
+  }
+
+  .shield-label svg {
+    @apply size-4;
+  }
+
+  .shield-offer-copy h3 {
+    @apply mt-3 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl;
+  }
+
+  .shield-offer-copy > p {
+    @apply mt-3 max-w-xl text-sm leading-6 text-slate-600;
+  }
+
+  .shield-offer-copy ul {
+    @apply mt-5 grid gap-2 text-sm text-slate-700;
+  }
+
+  .shield-offer-copy li {
+    @apply flex items-start gap-2;
+  }
+
+  .shield-offer-copy li svg {
+    @apply mt-0.5 size-4 shrink-0 text-red-600;
+  }
+
+  .shield-offer-covers {
+    @apply flex h-72 items-center justify-center overflow-hidden px-6 sm:h-80 lg:px-2;
+  }
+
+  .shield-offer-covers img {
+    @apply -mx-3 h-56 w-auto rounded-lg object-cover shadow-[0_18px_38px_rgba(69,10,10,.28)] sm:h-64;
+  }
+
+  .shield-offer-covers img:nth-child(odd) {
+    @apply -rotate-3;
+  }
+
+  .shield-offer-covers img:nth-child(even) {
+    @apply rotate-3;
+  }
+
+  .shield-offer-price {
+    @apply flex h-full flex-col justify-center border-t border-red-100 bg-white/65 p-7 lg:border-l lg:border-t-0;
+  }
+
+  .shield-offer-price > p {
+    @apply text-xs text-slate-500;
+  }
+
+  .shield-offer-price > strong {
+    @apply mt-1 text-4xl font-extrabold tracking-tight text-brand-navy;
+  }
+
+  .shield-offer-price > span {
+    @apply mt-1 text-xs font-extrabold text-red-700;
+  }
+
   .pricing-grid {
     @apply mt-12 grid gap-6 lg:grid-cols-3 lg:items-stretch;
   }
@@ -634,7 +707,7 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .pricing-covers-complete {
-    @apply h-48 flex-col gap-2;
+    @apply h-56 flex-col gap-1.5;
   }
 
   .complete-main-covers {
@@ -671,6 +744,22 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
 
   .complete-practical-covers img:nth-child(even) {
     @apply rotate-2;
+  }
+
+  .complete-scam-covers {
+    @apply relative z-30 flex h-10 items-end justify-center;
+  }
+
+  .complete-scam-covers img {
+    @apply -mx-1 h-9 w-auto rounded-sm object-cover shadow-[0_7px_16px_rgba(0,0,0,.4)];
+  }
+
+  .complete-scam-covers img:nth-child(odd) {
+    @apply -rotate-3;
+  }
+
+  .complete-scam-covers img:nth-child(even) {
+    @apply rotate-3;
   }
 
   .pricing-covers-practical {
@@ -798,6 +887,14 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply lg:grid-cols-2;
   }
 
+  .individual-grid-scam {
+    @apply lg:grid-cols-2 xl:grid-cols-4;
+  }
+
+  .individual-book-scam {
+    @apply border-red-200 bg-[#fffaf8] xl:grid-cols-[78px_1fr];
+  }
+
   .individual-book {
     @apply grid grid-cols-[92px_1fr] gap-4 rounded-2xl border border-slate-200 bg-white p-4;
   }
@@ -824,6 +921,34 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
 
   .individual-book button[aria-pressed='true'] {
     @apply bg-[#087a46];
+  }
+
+  .cart-upgrade {
+    @apply mt-4 rounded-2xl border border-brand-green/35 bg-[#edfff5] p-4;
+  }
+
+  .cart-upgrade-shield {
+    @apply border-red-200 bg-[#fff4f1];
+  }
+
+  .cart-upgrade > p {
+    @apply text-xs font-extrabold uppercase tracking-[.12em] text-[#087a46];
+  }
+
+  .cart-upgrade-shield > p {
+    @apply text-red-700;
+  }
+
+  .cart-upgrade > h3 {
+    @apply mt-1 font-extrabold text-brand-navy;
+  }
+
+  .cart-upgrade > span {
+    @apply mt-1 block text-sm leading-6 text-slate-600;
+  }
+
+  .cart-upgrade > button {
+    @apply mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl bg-brand-navy px-4 text-sm font-extrabold text-white;
   }
 
   .cart-fab {
