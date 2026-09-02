@@ -651,7 +651,7 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .pricing-grid {
-    @apply mt-12 grid gap-6 lg:grid-cols-3 lg:items-stretch;
+    @apply mt-8 grid gap-6 lg:grid-cols-3 lg:items-stretch;
   }
 
   .pricing-card {
@@ -660,6 +660,15 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
 
   .pricing-card-first-aid {
     @apply border-orange-200 bg-[#fff8ef] shadow-[0_20px_60px_rgba(194,65,12,.1)];
+  }
+
+  .pricing-card-shield {
+    @apply border-red-200 bg-[#fff8f6] shadow-[0_20px_60px_rgba(127,29,29,.1)];
+  }
+
+  .pricing-card-shield::before {
+    content: '';
+    @apply absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-red-600 via-orange-500 to-brand-yellow;
   }
 
   .pricing-card-first-aid::before,
@@ -685,6 +694,58 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply border-brand-green/60 bg-brand-navy text-white shadow-[0_28px_80px_rgba(3,23,42,.2)] lg:-translate-y-3;
   }
 
+  .pricing-card-complete-lead {
+    @apply mt-12 p-6 sm:p-8 lg:translate-y-0;
+  }
+
+  .complete-lead-layout {
+    @apply grid gap-8 lg:grid-cols-[1.02fr_.9fr_.62fr] lg:items-center;
+  }
+
+  .complete-lead-layout .pricing-card-top h3 {
+    @apply text-3xl leading-tight sm:text-4xl;
+  }
+
+  .complete-lead-layout .pricing-card-top > ul {
+    @apply mt-6 space-y-2.5 text-sm text-slate-200;
+  }
+
+  .complete-lead-layout .pricing-card-top > ul li {
+    @apply flex items-start gap-2;
+  }
+
+  .complete-lead-layout .pricing-card-top > ul svg {
+    @apply mt-0.5 size-4 shrink-0 text-brand-green;
+  }
+
+  .complete-lead-buy {
+    @apply rounded-2xl border border-white/10 bg-white/[.055] p-6;
+  }
+
+  .complete-lead-buy > p {
+    @apply text-xs text-slate-400;
+  }
+
+  .complete-lead-buy > strong {
+    @apply mt-1 block text-4xl font-extrabold tracking-tight text-white;
+  }
+
+  .complete-lead-buy > span {
+    @apply mt-1 block text-xs font-extrabold text-brand-green;
+  }
+
+  .complete-lead-buy > small {
+    @apply mt-4 block text-xs leading-5 text-slate-300;
+  }
+
+  .offer-alternatives-heading {
+    @apply mt-14 max-w-3xl;
+  }
+
+  .offer-alternatives-heading h3 {
+    @apply mt-2 text-2xl font-extrabold tracking-tight text-brand-navy sm:text-3xl;
+  }
+
   .pricing-ribbon {
     @apply -mx-7 -mt-7 mb-6 bg-brand-green px-5 py-2.5 text-center text-xs font-extrabold uppercase tracking-[.11em] text-brand-navy;
   }
@@ -700,6 +761,15 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   .pricing-card-first-aid .pricing-label,
   .pricing-card-first-aid .pricing-total span {
     @apply text-orange-700;
+  }
+
+  .pricing-card-shield .pricing-label,
+  .pricing-card-shield .pricing-total span {
+    @apply text-red-700;
+  }
+
+  .pricing-card-shield > ul svg {
+    @apply text-red-600;
   }
 
   .pricing-card-first-aid > ul svg {
@@ -755,18 +825,8 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply h-56 w-full items-stretch flex-col gap-1.5;
   }
 
-  .rating-stars {
-    @apply relative inline-block tracking-[.12em] text-slate-200;
-  }
-
-  .rating-stars::before,
-  .rating-stars::after {
-    content: '★★★★★';
-  }
-
-  .rating-stars::after {
-    @apply absolute inset-0 overflow-hidden whitespace-nowrap text-brand-yellow;
-    width: 94%;
+  .pricing-card-complete-lead .pricing-covers-complete {
+    @apply mt-0 h-64;
   }
 
   .complete-main-covers {
@@ -823,6 +883,22 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
 
   .pricing-covers-practical {
     @apply gap-0;
+  }
+
+  .pricing-covers-shield {
+    @apply gap-0;
+  }
+
+  .pricing-covers-shield img {
+    @apply -mx-1 h-28 object-contain first:ml-0 last:mr-0;
+  }
+
+  .pricing-covers-shield img:nth-child(odd) {
+    @apply -rotate-3;
+  }
+
+  .pricing-covers-shield img:nth-child(even) {
+    @apply rotate-3;
   }
 
   .pricing-covers-practical img {
@@ -916,6 +992,26 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
 
   .pricing-trust p {
     @apply mt-1 text-sm leading-6 text-slate-600;
+  }
+
+  .content-method-grid {
+    @apply mt-10 grid gap-5 md:grid-cols-3;
+  }
+
+  .content-method-grid article {
+    @apply rounded-2xl border border-white/10 bg-white/[.055] p-6;
+  }
+
+  .content-method-grid article > svg {
+    @apply size-6 text-brand-green;
+  }
+
+  .content-method-grid h3 {
+    @apply mt-5 text-lg font-extrabold text-white;
+  }
+
+  .content-method-grid p {
+    @apply mt-2 text-sm leading-6 text-slate-300;
   }
 
   .individual-pricing {
