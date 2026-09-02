@@ -74,7 +74,7 @@ export function OfferStore({ practicalBooks }: { practicalBooks: PracticalBook[]
   return <>
     <section id="nabidka" className="bg-white px-5 py-22 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-3xl text-center"><p className="eyebrow">Vyberte si podle toho, co právě potřebujete</p><h2 className="section-title">Od rychlé ochrany přes praktickou pomoc až po celý systém.</h2><p className="section-lead">Začněte nejmenším tématem za 99 Kč, vyberte si zvýhodněnou sadu, nebo získejte kompletní knihovnu za nejvýhodnější cenu.</p></div>
+        <div className="max-w-3xl text-left"><p className="eyebrow">Vyberte si podle toho, co právě potřebujete</p><h2 className="section-title">Od rychlé ochrany přes praktickou pomoc až po celý systém.</h2><p className="section-lead">Začněte nejmenším tématem za 99 Kč, vyberte si zvýhodněnou sadu, nebo získejte kompletní knihovnu za nejvýhodnější cenu.</p></div>
 
         <article className="shield-offer">
           <div className="shield-offer-copy"><span className="shield-label"><ShieldAlert /> 1 • ochrana před podvody</span><h3>Finanční štít</h3><p>Podvodníkovi někdy stačí pár minut strachu, důvěry nebo spěchu. Čtyři krátké průvodce vám dají konkrétní signály a kontrolní otázky dřív, než odejdou peníze.</p><ul>{['domluvíte si bezpečnější postup s rodiči a prarodiči', 'ověříte podezřelý profil, reklamu, video nebo nabídku', 'poznáte, kdy raději neklikat, neposílat peníze a vše nejdřív prověřit'].map((item) => <li key={item}><Check />{item}</li>)}</ul></div>

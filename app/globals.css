@@ -752,11 +752,25 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .pricing-covers-complete {
-    @apply h-56 flex-col gap-1.5;
+    @apply h-56 w-full items-stretch flex-col gap-1.5;
+  }
+
+  .rating-stars {
+    @apply relative inline-block tracking-[.12em] text-slate-200;
+  }
+
+  .rating-stars::before,
+  .rating-stars::after {
+    content: '★★★★★';
+  }
+
+  .rating-stars::after {
+    @apply absolute inset-0 overflow-hidden whitespace-nowrap text-brand-yellow;
+    width: 94%;
   }
 
   .complete-main-covers {
-    @apply flex h-32 items-end justify-center;
+    @apply flex h-32 w-full items-end justify-around px-1;
   }
 
   .complete-main-covers img {
@@ -764,7 +778,7 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .complete-main-covers img:first-child {
-    @apply translate-x-3 -rotate-6;
+    @apply translate-x-0 -rotate-6;
   }
 
   .complete-main-covers img:nth-child(2) {
@@ -772,15 +786,15 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .complete-main-covers img:last-child {
-    @apply -translate-x-3 rotate-6;
+    @apply translate-x-0 rotate-6;
   }
 
   .complete-practical-covers {
-    @apply relative z-20 flex h-12 items-end justify-center;
+    @apply relative z-20 flex h-12 w-full items-end justify-between px-1;
   }
 
   .complete-practical-covers img {
-    @apply -mx-1 h-11 w-auto rounded-sm object-cover shadow-[0_7px_16px_rgba(0,0,0,.35)];
+    @apply mx-0 h-11 w-auto rounded-sm object-cover shadow-[0_7px_16px_rgba(0,0,0,.35)];
   }
 
   .complete-practical-covers img:nth-child(odd) {
@@ -792,11 +806,11 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .complete-scam-covers {
-    @apply relative z-30 flex h-10 items-end justify-center;
+    @apply relative z-30 flex h-10 w-full items-end justify-between px-1;
   }
 
   .complete-scam-covers img {
-    @apply -mx-1 h-9 w-auto rounded-sm object-cover shadow-[0_7px_16px_rgba(0,0,0,.4)];
+    @apply mx-0 h-9 w-auto rounded-sm object-cover shadow-[0_7px_16px_rgba(0,0,0,.4)];
   }
 
   .complete-scam-covers img:nth-child(odd) {
