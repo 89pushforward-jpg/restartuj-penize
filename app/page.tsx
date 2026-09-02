@@ -1,22 +1,19 @@
 import {
   ArrowRight,
-  BookOpen,
   Check,
   ChevronDown,
   Compass,
-  FileCheck2,
-  Gauge,
   Mail,
   Route,
   SearchCheck,
   ShieldCheck,
   Sparkles,
   X,
-  WalletCards,
 } from 'lucide-react';
 
 import { BookOfferDialog } from '@/components/book-offer-dialog';
 import { OfferStore } from '@/components/offer-store';
+import { ProductInfoDialog } from '@/components/product-info-dialog';
 import { cn } from '@/lib/utils';
 
 const proof = [
@@ -26,20 +23,13 @@ const proof = [
   'Mindset jako bonus • celkem 13 PDF',
 ];
 
-const situations = [
-  { icon: FileCheck2, title: 'Před podpisem smlouvy', text: 'Víte, které pojmy, náklady a podmínky si potřebujete nechat vysvětlit.' },
-  { icon: SearchCheck, title: 'Při výběru poradce nebo brokera', text: 'Máte konkrétní otázky a kritéria, podle kterých můžete nabídky porovnat.' },
-  { icon: WalletCards, title: 'Když peníze mizí bez systému', text: 'Začnete rozpočtem a místy, kde má smysl zkontrolovat pravidelné výdaje.' },
-  { icon: Gauge, title: 'Když cítíte tlak nebo FOMO', text: 'Rozpoznáte emoční spouštěče a získáte prostor rozhodnout se vlastním tempem.' },
-];
-
 const practicalBooks = [
-  { image: '/books/emotions.png', title: 'Faktor nátlaku a emocí při rozhodování', use: 'Získáte jednoduchou brzdu proti tlaku a FOMO, abyste nepodepsali nebo nekoupili něco jen proto, že vás někdo tlačí k rychlému „ano“.' },
-  { image: '/books/broker.png', title: 'Jak si vybrat správného brokera pro investování', use: 'Srovnáte brokery podle konkrétních kritérií a snáz odhalíte poplatky, omezení nebo varovné signály ještě před odesláním peněz.' },
-  { image: '/books/budget.png', title: 'Jak vytvořit rodinný rozpočet', use: 'Uvidíte, kam peníze skutečně mizí, a sestavíte si plán výdajů, rezervy a cílů, který lze dlouhodobě dodržet.' },
-  { image: '/books/income.png', title: 'Jak zvýšit svůj příjem', use: 'Pojmenujete svou hodnotu, připravíte si argumenty pro vyšší odměnu a objevíte konkrétní cesty, kde lze příjem posunout.' },
-  { image: '/books/fees.png', title: 'Poplatky, které platíte zbytečně', use: 'Najdete pravidelné platby a poplatky, které stojí za kontrolu, a získáte postup pro porovnání nebo vyjednání lepších podmínek.' },
-  { image: '/books/advisor.png', title: 'Poradci — dobrý vs. špatný', use: 'Dostanete otázky, které pomohou odlišit skutečné vysvětlování od prodejního tlaku dřív, než podepíšete nevýhodnou smlouvu.' },
+  { image: '/books/emotions.png', title: 'Faktor nátlaku a emocí při rozhodování', use: 'Získáte jednoduchou brzdu proti tlaku a FOMO, abyste nepodepsali nebo nekoupili něco jen proto, že vás někdo tlačí k rychlému „ano“.', forWhom: 'Vás rozhodnutí znervózní, prodejce spěchá nebo se bojíte, že vám uteče příležitost.', inside: ['jak nátlak mění rozhodování', 'typické spouštěče strachu a FOMO', 'praktická pauza před podpisem nebo nákupem'] },
+  { image: '/books/broker.png', title: 'Jak si vybrat správného brokera pro investování', use: 'Srovnáte brokery podle konkrétních kritérií a snáz odhalíte poplatky, omezení nebo varovné signály ještě před odesláním peněz.', forWhom: 'Vybíráte platformu a nechcete rozhodovat jen podle reklamy, aplikace nebo doporučení známého.', inside: ['regulace, zabezpečení a oddělení majetku', 'poplatky, nabídka nástrojů a omezení', 'otázky pro porovnání více brokerů'] },
+  { image: '/books/budget.png', title: 'Jak vytvořit rodinný rozpočet', use: 'Uvidíte, kam peníze skutečně mizí, a sestavíte si plán výdajů, rezervy a cílů, který lze dlouhodobě dodržet.', forWhom: 'Na konci měsíce nevíte, kam peníze odešly, nebo se na rozpočtu potřebujete domluvit v domácnosti.', inside: ['přehled příjmů a pravidelných výdajů', 'rezerva, cíle a rozdělení peněz', 'jednoduchý systém pro průběžnou kontrolu'] },
+  { image: '/books/income.png', title: 'Jak zvýšit svůj příjem', use: 'Pojmenujete svou hodnotu, připravíte si argumenty pro vyšší odměnu a objevíte konkrétní cesty, kde lze příjem posunout.', forWhom: 'Úspory už nestačí a potřebujete promyslet vyjednávání, změnu práce nebo další zdroj příjmu.', inside: ['příprava argumentů pro vyšší odměnu', 'zhodnocení dovedností a možností trhu', 'varianty aktivního a vedlejšího příjmu'] },
+  { image: '/books/fees.png', title: 'Poplatky, které platíte zbytečně', use: 'Najdete pravidelné platby a poplatky, které stojí za kontrolu, a získáte postup pro porovnání nebo vyjednání lepších podmínek.', forWhom: 'Máte více smluv a služeb a chcete zjistit, kde odcházejí malé částky, které se za rok nasčítají.', inside: ['kontrola bankovních a servisních poplatků', 'porovnání tarifů a pravidelných služeb', 'příprava na změnu nebo vyjednání podmínek'] },
+  { image: '/books/advisor.png', title: 'Poradci — dobrý vs. špatný', use: 'Dostanete otázky, které pomohou odlišit skutečné vysvětlování od prodejního tlaku dřív, než podepíšete nevýhodnou smlouvu.', forWhom: 'Máte před sebou doporučení nebo smlouvu a nevíte, zda poradce vysvětluje, nebo hlavně prodává.', inside: ['otázky na odměnu, rizika a alternativy', 'varovné signály prodejního tlaku', 'co si nechat vysvětlit před podpisem'] },
 ];
 
 const financialSamples = [
@@ -195,18 +185,6 @@ export default function Home() {
 
       <OfferStore practicalBooks={practicalBooks} />
 
-      <section className="bg-[#f5f8f6] px-5 py-20 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-9 lg:grid-cols-[.84fr_1.16fr] lg:items-center">
-            <div><p className="eyebrow">Pro chvíle, kdy nestačí jen tušit</p><h2 className="section-title">Udělejte si jasno dřív, než podepíšete smlouvu nebo pošlete peníze.</h2><p className="section-lead">Balíček neslibuje zázračné výnosy. Dává vám jazyk, souvislosti a kontrolní otázky, se kterými se můžete rozhodovat informovaněji.</p></div>
-            <figure className="section-illustration"><img src="/story/decision-crossroads.jpg" width="1586" height="1000" alt="Ilustrace rozcestí běžných finančních rozhodnutí" /><figcaption>Každé rozhodnutí je snazší, když víte, podle čeho ho posoudit.</figcaption></figure>
-          </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {situations.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(3,23,42,.04)]"><span className="grid size-11 place-items-center rounded-xl bg-brand-navy text-brand-green"><Icon className="size-5" /></span><h3 className="mt-5 font-bold text-brand-navy">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{text}</p></article>)}
-          </div>
-        </div>
-      </section>
-
       <section id="hlavni-knihy" className="bg-white px-5 py-22 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl text-left"><p className="eyebrow">Jádro celé knihovny</p><h2 className="section-title">Dvě hlavní knihy promění nesouvislé rady v systém, podle kterého se dokážete rozhodovat.</h2></div>
@@ -228,19 +206,16 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[1fr_.72fr] lg:items-end"><div><p className="eyebrow text-brand-green">Šest průvodců pro konkrétní situace</p><h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">Nemusíte hledat jednu odpověď v celé knihovně.</h2></div><p className="text-base leading-7 text-slate-300">Otevřete e-book k tématu, které právě řešíte. Každý titul má svou skutečnou obálku, přesný účel a je součástí kompletního balíčku.</p></div>
           <figure className="section-illustration section-illustration-dark mt-10"><img src="/story/guide-library.jpg" width="1586" height="1000" alt="Ilustrace výběru praktického finančního průvodce podle aktuální situace" /><figcaption>Nečtete všechno najednou. Sáhnete po tématu, které právě potřebujete vyřešit.</figcaption></figure>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {practicalBooks.map((book) => <article key={book.title} className="practical-card"><img src={book.image} width="240" height="364" alt={`Obálka e-booku ${book.title}`} /><div><p className="text-xs font-bold uppercase tracking-[.14em] text-brand-green">Praktický e-book</p><h3>{book.title}</h3><p>{book.use}</p><a href="#jednotlive-ebooky">Samostatně 199 Kč <ArrowRight /></a></div></article>)}
+            {practicalBooks.map((book, index) => <article key={book.title} className="practical-card"><img src={book.image} width="240" height="364" alt={`Obálka e-booku ${book.title}`} /><div><p className="text-xs font-bold uppercase tracking-[.14em] text-brand-green">Praktický e-book</p><h3>{book.title}</h3><p>{book.use}</p><ProductInfoDialog instanceId={`prehled-${index + 1}`} title={book.title} eyebrow="Praktický e-book" description={book.use} bestFor={book.forWhom} outcome={book.use} includes={book.inside} price="199 Kč" formatLine="Samostatný digitální e-book • PDF" coverGroups={[{ covers: [{ src: book.image, alt: `Obálka e-booku ${book.title}` }] }]} triggerLabel="Prohlédnout detail" triggerClassName="product-info-trigger-dark" /></div></article>)}
           </div>
-          <div className="bonus-panel"><img src="/books/mindset.png" width="240" height="364" alt="Obálka bonusu Mindset úspěšného investora" /><div><span>BONUS K OBOU HLAVNÍM KNIHÁM</span><h3>Mindset úspěšného investora</h3><p>Vytvoříte si osobní pravidla, která pomáhají brzdit impulzivní nákupy, FOMO a chaotické změny plánu ve chvíli, kdy emoce přebírají kontrolu.</p></div></div>
-          <div className="mt-10 text-left"><a href="#nabidka" className={primaryCta}>Získat kompletní knihovnu 13 PDF <ArrowRight data-icon="inline-end" /></a></div>
+          <div className="bonus-panel"><img src="/books/mindset.png" width="240" height="364" alt="Obálka bonusu Mindset úspěšného investora" /><div><span>BONUS K OBOU HLAVNÍM KNIHÁM</span><h3>Mindset úspěšného investora</h3><p>Vytvoříte si osobní pravidla, která pomáhají brzdit impulzivní nákupy, FOMO a chaotické změny plánu ve chvíli, kdy emoce přebírají kontrolu.</p><ProductInfoDialog instanceId="bonus-mindset" title="Mindset úspěšného investora" eyebrow="Bonusový e-book" description="Praktický doplněk k hlavním knihám pro chvíle, kdy správné rozhodnutí nekomplikuje nedostatek informací, ale emoce a tlak okolí." bestFor="Znáte základní principy, ale FOMO, panika nebo časté změny plánu vám komplikují jejich dodržování." outcome="Sepíšete si vlastní rozhodovací pravidla a vytvoříte odstup mezi emocí a konkrétní akcí." includes={['rozpoznání emočních spouštěčů', 'pravidla pro klidnější investiční rozhodování', 'práce s FOMO a impulzivní změnou plánu']} price="Bonus k Finanční mapě" formatLine="Bonusový digitální e-book • PDF" coverGroups={[{ covers: [{ src: '/books/mindset.png', alt: 'Mindset úspěšného investora' }] }]} triggerLabel="Prohlédnout bonus" triggerClassName="product-info-trigger-dark" /></div></div>
         </div>
       </section>
 
       <section className="bg-[#f5f8f6] px-5 py-22 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div>
-            <div className="max-w-3xl text-left"><p className="eyebrow">Uvnitř skutečných knih</p><h2 className="section-title">Nejen názvy na obálce. Podívejte se na témata z různých částí obou knih.</h2><p className="section-lead">Ukázky jsou nově ve vysokém rozlišení. Kliknutím otevřete celou stranu a můžete si prohlédnout sazbu, obrázky i způsob vysvětlení.</p>
-              <div className="mt-8 space-y-4">{[['1', 'Ochraňte to, co už máte', 'Finanční štít ukáže časté podvodné scénáře a jejich varovné signály.'], ['2', 'Začněte základy', 'Finanční (Re)Start vám dá mapu a pořadí témat.'], ['3', 'Dohledávejte pojmy', 'Slovník investora používejte jako průběžnou referenci.'], ['4', 'Otevřete aktuální situaci', 'Vyberte jeden ze šesti praktických průvodců.']].map(([n, title, text]) => <div key={n} className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-4"><span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-navy font-extrabold text-brand-green">{n}</span><div><h3 className="font-bold text-brand-navy">{title}</h3><p className="mt-1 text-sm leading-6 text-slate-600">{text}</p></div></div>)}</div>
-            </div>
+            <div className="max-w-3xl text-left"><p className="eyebrow">Uvnitř skutečných knih</p><h2 className="section-title">Nejen názvy na obálce. Podívejte se na témata z různých částí obou knih.</h2><p className="section-lead">Kliknutím otevřete celou stranu ve vysokém rozlišení a můžete si prohlédnout sazbu, obrázky i způsob vysvětlení.</p></div>
             <div className="mt-12 grid gap-8 lg:grid-cols-2">
               {[['Finanční (Re)Start', financialSamples], ['Slovník investora', dictionarySamples]].map(([title, samples]) => <article key={title as string} className="sample-book"><div className="sample-book-heading"><span>Ukázky napříč knihou</span><h3>{title as string}</h3></div><div className="sample-grid">{(samples as typeof financialSamples).map((sample) => <a key={sample.src} href={sample.src} target="_blank" rel="noreferrer"><img src={sample.src} width="1400" height="2121" alt={sample.alt} loading="lazy" /><span>{sample.topic} ↗</span></a>)}</div></article>)}
             </div>
@@ -279,8 +254,6 @@ export default function Home() {
       </section>
 
       <section id="faq" className="bg-[#f5f8f6] px-5 py-22 lg:px-8"><div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[.62fr_1.38fr]"><div><p className="eyebrow">Časté otázky</p><h2 className="section-title">Vše důležité před rozhodnutím.</h2><p className="section-lead">Přesně víte, co kupujete — a také co tento balíček neslibuje.</p></div><div className="space-y-3">{faqs.map(([question, answer]) => <details key={question} className="group rounded-2xl border border-slate-200 bg-white px-5 py-1 open:shadow-[0_10px_30px_rgba(3,23,42,.04)]"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-bold text-brand-navy marker:content-none">{question}<ChevronDown className="size-4 shrink-0 text-slate-400 transition group-open:rotate-180" /></summary><p className="border-t border-slate-100 pb-5 pt-4 text-sm leading-6 text-slate-600">{answer}</p></details>)}</div></div></section>
-
-      <section className="bg-brand-navy px-5 py-20 text-white lg:px-8"><div className="mx-auto max-w-4xl text-left"><BookOpen className="size-8 text-brand-green" /><h2 className="mt-5 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">Nemusíte znát odpověď na všechno. Potřebujete vědět, kde ji hledat a na co se zeptat.</h2><p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">Začněte u základů a otevřete konkrétní průvodce ve chvíli, kdy ho potřebujete.</p><a href="#nabidka" className={cn(primaryCta, 'mt-8')}>Prohlédnout kompletní nabídku <ArrowRight data-icon="inline-end" /></a></div></section>
 
       <footer className="bg-[#02111f] px-5 py-10 text-sm text-slate-400 lg:px-8"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row"><div><BrandLogo compact /><p className="mt-3 max-w-md leading-6">Vzdělávací projekt pro srozumitelnější každodenní finanční rozhodování.</p></div><div className="grid gap-3 sm:grid-cols-2 sm:gap-x-10"><a href="mailto:info@restartujpenize.cz" className="inline-flex items-center gap-2 transition hover:text-white"><Mail className="size-4" /> info@restartujpenize.cz</a><span>Obchodní podmínky</span><span>Ochrana osobních údajů</span><span>Vzdělávací disclaimer</span></div></div><div className="mx-auto mt-8 max-w-7xl border-t border-white/10 pt-6 text-xs leading-5 text-slate-500">Obsah nenahrazuje osobní finanční, investiční, právní ani daňové poradenství. Konkrétní podmínky produktů a poskytovatelů vždy ověřte v aktuálních oficiálních zdrojích.</div></footer>
 
