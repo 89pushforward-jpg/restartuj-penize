@@ -658,6 +658,28 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
     @apply relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-[#f8faf8] p-6 shadow-[0_20px_60px_rgba(3,23,42,.07)] sm:p-7;
   }
 
+  .pricing-card-first-aid {
+    @apply border-orange-200 bg-[#fff8ef] shadow-[0_20px_60px_rgba(194,65,12,.1)];
+  }
+
+  .pricing-card-first-aid::before,
+  .pricing-card-map::before {
+    content: '';
+    @apply absolute inset-x-0 top-0 h-1.5;
+  }
+
+  .pricing-card-first-aid::before {
+    @apply bg-gradient-to-r from-orange-600 via-orange-400 to-brand-yellow;
+  }
+
+  .pricing-card-map {
+    @apply border-amber-300 bg-[#fffbed] shadow-[0_20px_60px_rgba(161,98,7,.13)];
+  }
+
+  .pricing-card-map::before {
+    @apply bg-gradient-to-r from-amber-700 via-brand-yellow to-amber-400;
+  }
+
   .pricing-card-featured {
     @apply border-brand-green/60 bg-brand-navy text-white shadow-[0_28px_80px_rgba(3,23,42,.2)] lg:-translate-y-3;
   }
@@ -667,7 +689,29 @@ h1, h2, h3, h4, h5, h6, button, .font-heading {
   }
 
   .pricing-label {
-    @apply text-xs font-extrabold uppercase tracking-[.13em] text-[#087a46];
+    @apply inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.13em] text-[#087a46];
+  }
+
+  .pricing-label svg {
+    @apply size-4;
+  }
+
+  .pricing-card-first-aid .pricing-label,
+  .pricing-card-first-aid .pricing-total span {
+    @apply text-orange-700;
+  }
+
+  .pricing-card-first-aid > ul svg {
+    @apply text-orange-600;
+  }
+
+  .pricing-card-map .pricing-label,
+  .pricing-card-map .pricing-total span {
+    @apply text-amber-800;
+  }
+
+  .pricing-card-map > ul svg {
+    @apply text-amber-700;
   }
 
   .pricing-card-featured .pricing-label {
