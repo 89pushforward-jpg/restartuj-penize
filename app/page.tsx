@@ -125,7 +125,7 @@ export default function Home() {
       <section className="bg-white px-5 py-8 lg:px-8">
         <div className="independent-note mx-auto max-w-7xl">
           <div className="independent-note-mark"><img src="/brand/mark-official.png" width="960" height="960" alt="" /></div>
-          <div className="independent-note-copy"><p className="eyebrow">Nezávislý vzdělávací projekt</p><h2>Značka, která prodává knihy — ne finanční produkty.</h2><p>Restartuj Peníze založil a zpracovává podnikatel Lukáš Zahrádka poté, co se sám potřeboval vymotat z finančního zmatku. Složité informace třídí do přehledných souvislostí, kontrolních otázek a praktických postupů použitelných i bez ekonomického vzdělání.</p><div className="independent-badges"><span><Check /> Bez prodeje finančních produktů</span><span><Check /> Vzdělávací obsah, ne osobní poradenství</span><span><Check /> Bez falešného časovače</span><span><Check /> Bez telefonického prodeje</span><strong>Vše srozumitelně a vlastním tempem.</strong></div></div>
+          <div className="independent-note-copy"><p className="eyebrow">Nezávislý vzdělávací projekt</p><h2>Značka, která prodává knihy — ne finanční produkty.</h2><p>Restartuj Peníze není projekt banky, poradenské sítě ani investiční platformy. Za zpracování odpovídá podnikatel Lukáš Zahrádka, který složitá témata převádí do přehledných souvislostí, kontrolních otázek a praktických postupů použitelných i bez ekonomického vzdělání.</p><div className="independent-badges"><span><Check /> Bez prodeje finančních produktů</span><span><Check /> Vzdělávací obsah, ne osobní poradenství</span><span><Check /> Bez falešného časovače</span><span><Check /> Bez telefonického prodeje</span><strong>Vše srozumitelně a vlastním tempem.</strong></div></div>
           <a href="#o-projektu">Poznat příběh projektu <ArrowRight /></a>
         </div>
       </section>
@@ -229,28 +229,25 @@ export default function Home() {
 
       <section className="bg-brand-navy px-5 py-20 text-white lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl"><p className="eyebrow text-brand-green">Jak obsah vzniká</p><h2 className="mt-4 text-balance text-3xl font-extrabold leading-[1.25] tracking-[.005em] sm:text-4xl">Srozumitelnost bez předstírání, že se finanční svět nemění.</h2><p className="mt-5 text-lg leading-8 text-slate-300">Knihovna třídí pojmy, rizika a rozhodovací otázky do návazného systému. Nadčasové principy odděluje od údajů, které je potřeba před rozhodnutím znovu ověřit.</p></div>
+          <div className="max-w-3xl"><p className="eyebrow text-brand-green">Metodika Restartuj Peníze</p><h2 className="mt-4 text-balance text-3xl font-extrabold leading-[1.25] tracking-[.005em] sm:text-4xl">Od konkrétního problému k mapě, podle které se dokážete zorientovat.</h2><p className="mt-5 text-lg leading-8 text-slate-300">Obsah nevzniká jako sbírka izolovaných rad. Každé téma prochází stejným postupem: pojmenovat situaci, vysvětlit souvislosti a převést je do otázek a kroků, které si můžete sami projít.</p></div>
           <div className="content-method-grid">
-            <article><Route /><h3>Souvislosti místo útržků</h3><p>Témata jsou seřazená tak, abyste viděli, co s čím souvisí a kterým krokem má smysl začít.</p></article>
-            <article><SearchCheck /><h3>Kontrolní otázky</h3><p>U smluv, poplatků, poradců i brokerů dostanete body, které si můžete sami prověřit.</p></article>
-            <article><ShieldCheck /><h3>Aktuální údaje ověřujte</h3><p>Konkrétní sazby, regulaci a podmínky poskytovatelů vždy ověřte v aktuálních oficiálních zdrojích.</p></article>
+            <article><Route /><span>1</span><h3>Začíná se skutečnou situací</h3><p>Nejdřív se pojmenuje problém, rozhodnutí nebo riziko, které člověk právě řeší — bez zbytečné odborné omáčky.</p></article>
+            <article><SearchCheck /><span>2</span><h3>Informace dostanou pořadí</h3><p>Pojmy, možnosti a rizika jsou poskládané do souvislostí, aby bylo jasné, co řešit nejdřív a proč.</p></article>
+            <article><ShieldCheck /><span>3</span><h3>Výstupem je vlastní kontrola</h3><p>Téma končí otázkami, varovnými signály a postupem, podle kterého si můžete další rozhodnutí sami prověřit.</p></article>
           </div>
+          <p className="method-note"><ShieldCheck /> Nadčasové principy oddělujeme od údajů, které se mění. Aktuální sazby, regulaci a podmínky poskytovatelů je vždy potřeba ověřit v oficiálních zdrojích.</p>
         </div>
       </section>
 
       <section id="o-projektu" className="bg-[#f5f8f6] px-5 py-22 lg:px-8">
-        <details className="founder-card mx-auto max-w-6xl">
-          <summary>
+        <div className="founder-card founder-card-compact mx-auto max-w-6xl">
+          <div className="founder-card-compact-layout">
             <img src="/story/lukas-zahradka.webp" width="720" height="720" alt="Lukáš Zahrádka, autor projektu Restartuj Peníze" />
-            <div><p className="eyebrow">Kdo odpovídá za obsah a proč projekt vznikl</p><h2>Lukáš Zahrádka</h2><p>Jsem podnikatel, kterého nedostatek souvislostí a přehlédnuté podmínky ve smlouvě stály více než 100 000 Kč. Začal jsem proto finanční témata ověřovat, třídit a převádět do systému, podle kterého se dokážu rozhodovat s větším přehledem.</p><div className="founder-tags"><span><Check /> podnikatelská zkušenost</span><span><Check /> osobní cesta z finančního zmatku</span><span><Check /> odpovědnost za zpracování obsahu</span></div></div>
-            <span className="founder-open-label">Přečíst celý příběh <ChevronDown /></span>
-          </summary>
-          <div className="founder-card-detail">
-            <div><p className="book-kicker">Proč Restartuj Peníze vzniklo</p><h3>Nejdřív jsem potřeboval napravit vlastní finanční rozhodování.</h3><p>Jako podnikatel jsem byl zvyklý rozhodovat se a nést za svá rozhodnutí odpovědnost. Přesto mě neznalost důležitých podmínek ve smlouvě stála více než 100 000 Kč. Tehdy jsem pochopil, že bez souvislostí člověk snadno přehlédne podmínku, poplatek nebo varovný signál.</p><p>Začal jsem proto finance studovat, ověřovat a převádět do vlastního systému. Díky tomu dnes investičním tématům lépe rozumím, rozhoduji se podle předem stanovených pravidel a dokážu dříve poznat nabídky, které potřebují další prověření nebo odmítnutí.</p><p>Restartuj Peníze tuto cestu zpřístupňuje lidem, kteří se chtějí zorientovat bez prodeje investičních produktů a bez tlaku na rychlé rozhodnutí.</p></div>
-            <div className="founder-detail-panel"><Sparkles className="size-6 text-brand-yellow" /><h3>Zkušenost proměněná v přehlednou mapu</h3><p>Více než 15 let se věnuji vizuální tvorbě, komunikaci a převádění složitých témat do srozumitelné podoby. Proto mají knihy méně odborné mlhy a více příkladů, obrazových souvislostí, kontrolních otázek a jasné struktury.</p><blockquote>„Knihy vám neříkají, co máte koupit. Pomáhají rozumět pojmům, odhalit varovné signály a vědět, co si před vlastním rozhodnutím ověřit.“</blockquote></div>
+            <div><p className="eyebrow">Odpovědnost za obsah</p><h2>Za projektem stojí konkrétní autor.</h2><p>Restartuj Peníze sestavuje podnikatel Lukáš Zahrádka. Jeho úlohou není doporučovat finanční produkty, ale vybírat podstatné souvislosti a převádět složitá témata do srozumitelné vizuální a praktické podoby.</p><div className="founder-tags"><span><Check /> více než 15 let ve vizuální komunikaci</span><span><Check /> nezávislé zpracování</span><span><Check /> jasně uvedená odpovědnost</span></div></div>
+            <div className="founder-detail-panel"><Sparkles className="size-6 text-brand-yellow" /><h3>Co drží knihovnu pohromadě</h3><ol className="founder-method-list"><li><strong>Výběr:</strong> témata podle problémů, které lidé skutečně řeší.</li><li><strong>Struktura:</strong> pojmy a rizika v návazném pořadí.</li><li><strong>Použití:</strong> příklady, kontrolní otázky a další konkrétní krok.</li></ol></div>
           </div>
           <div className="founder-card-footer"><ShieldCheck /><span><strong>Nezávislý vzdělávací projekt.</strong> Bez prodeje finančních produktů, bez osobních investičních doporučení a bez tlaku na rychlé rozhodnutí.</span></div>
-        </details>
+        </div>
       </section>
 
       <section id="faq" className="bg-[#f5f8f6] px-5 py-22 lg:px-8"><div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[.62fr_1.38fr]"><div><p className="eyebrow">Časté otázky</p><h2 className="section-title">Vše důležité před rozhodnutím.</h2><p className="section-lead">Přesně víte, co kupujete — a také co tento balíček neslibuje.</p></div><div className="space-y-3">{faqs.map(([question, answer]) => <details key={question} className="group rounded-2xl border border-slate-200 bg-white px-5 py-1 open:shadow-[0_10px_30px_rgba(3,23,42,.04)]"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-bold text-brand-navy marker:content-none">{question}<ChevronDown className="size-4 shrink-0 text-slate-400 transition group-open:rotate-180" /></summary><p className="border-t border-slate-100 pb-5 pt-4 text-sm leading-6 text-slate-600">{answer}</p></details>)}</div></div></section>

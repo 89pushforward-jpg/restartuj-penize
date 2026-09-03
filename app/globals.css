@@ -293,20 +293,20 @@ h1, h2, h3, h4, h5, h6 {
     @apply scroll-mt-8 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_80px_rgba(3,23,42,.07)];
   }
 
-  .founder-card > summary {
-    @apply grid cursor-pointer list-none items-center gap-6 p-6 marker:content-none sm:p-8 md:grid-cols-[180px_1fr_auto] md:gap-8;
+  .founder-card-compact-layout {
+    @apply grid items-center gap-6 p-6 sm:p-8 lg:grid-cols-[150px_1fr_.82fr] lg:gap-8;
   }
 
-  .founder-card > summary > img {
-    @apply aspect-square w-full max-w-[180px] rounded-3xl object-cover shadow-[0_18px_40px_rgba(3,23,42,.18)];
+  .founder-card-compact-layout > img {
+    @apply aspect-square w-full max-w-[150px] rounded-3xl object-cover shadow-[0_18px_40px_rgba(3,23,42,.18)];
   }
 
-  .founder-card > summary h2 {
+  .founder-card-compact-layout h2 {
     @apply mt-2 text-3xl font-extrabold leading-[1.3] tracking-[.005em] text-brand-navy;
   }
 
-  .founder-card > summary p:not(.eyebrow) {
-    @apply mt-3 max-w-3xl leading-7 text-slate-600;
+  .founder-card-compact-layout > div > p:not(.eyebrow) {
+    @apply mt-3 max-w-2xl leading-7 text-slate-600;
   }
 
   .founder-tags {
@@ -321,32 +321,8 @@ h1, h2, h3, h4, h5, h6 {
     @apply size-3.5;
   }
 
-  .founder-open-label {
-    @apply inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-brand-navy/15 px-4 text-sm font-extrabold text-brand-navy transition group-open:bg-brand-navy group-open:text-white;
-  }
-
-  .founder-open-label svg {
-    @apply size-4 transition;
-  }
-
-  .founder-card[open] .founder-open-label svg {
-    @apply rotate-180;
-  }
-
-  .founder-card[open] .founder-open-label {
-    @apply bg-brand-navy text-white;
-  }
-
-  .founder-card-detail {
-    @apply grid gap-7 border-t border-slate-200 bg-[#f8faf8] p-6 sm:p-8 lg:grid-cols-[1.15fr_.85fr];
-  }
-
-  .founder-card-detail h3 {
+  .founder-card-compact-layout h3 {
     @apply mt-3 text-2xl font-extrabold leading-[1.4] tracking-[.005em] text-brand-navy;
-  }
-
-  .founder-card-detail p {
-    @apply mt-4 leading-7 text-slate-600;
   }
 
   .founder-detail-panel {
@@ -361,8 +337,16 @@ h1, h2, h3, h4, h5, h6 {
     @apply text-slate-300;
   }
 
-  .founder-detail-panel blockquote {
-    @apply mt-5 border-l-2 border-brand-green pl-4 text-sm font-bold italic leading-6 text-white;
+  .founder-method-list {
+    @apply mt-5 space-y-3 text-sm leading-6 text-slate-300;
+  }
+
+  .founder-method-list li {
+    @apply border-l-2 border-brand-green/70 pl-3;
+  }
+
+  .founder-method-list strong {
+    @apply text-white;
   }
 
   .founder-card-footer {
@@ -1043,11 +1027,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .content-method-grid article {
-    @apply rounded-2xl border border-white/10 bg-white/[.055] p-6;
+    @apply relative rounded-2xl border border-white/10 bg-white/[.055] p-6;
   }
 
   .content-method-grid article > svg {
     @apply size-6 text-brand-green;
+  }
+
+  .content-method-grid article > span {
+    @apply absolute right-5 top-4 text-4xl font-extrabold text-white/10;
   }
 
   .content-method-grid h3 {
@@ -1056,6 +1044,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .content-method-grid p {
     @apply mt-2 text-sm leading-6 text-slate-300;
+  }
+
+  .method-note {
+    @apply mt-6 flex max-w-5xl items-start gap-3 rounded-2xl border border-brand-green/20 bg-brand-green/[.07] p-5 text-sm leading-6 text-slate-300;
+  }
+
+  .method-note > svg {
+    @apply mt-0.5 size-5 shrink-0 text-brand-green;
   }
 
   .individual-pricing {
