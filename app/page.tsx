@@ -99,7 +99,7 @@ export default function Home() {
             <p className="inline-flex items-center gap-2 rounded-full border border-brand-green/25 bg-brand-green/8 px-3 py-1.5 text-sm font-semibold text-brand-green">
               <Compass className="size-4" /> Mapa ven z finančního zmatku
             </p>
-            <h1 className="mt-6 max-w-3xl text-balance text-4xl font-extrabold leading-[1.13] tracking-[-.025em] sm:text-5xl lg:text-6xl">Ve financích máte zmatek. Nevíte, komu věřit — a nechcete udělat drahou chybu.</h1>
+            <h1 className="mt-6 max-w-3xl text-balance text-4xl font-extrabold leading-[1.18] tracking-[.003em] sm:text-5xl lg:text-6xl">Ve financích máte zmatek. Nevíte, komu věřit — a nechcete udělat drahou chybu.</h1>
             <div className="hero-pain-points"><span>Každý radí něco jiného</span><span>Smlouvám nerozumíte</span><span>Rozhodnutí odkládáte</span></div>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-300"><strong className="text-white">Tady najdete mapu ven:</strong> srozumitelné základy, slovník pojmů a praktické průvodce pro situaci, kterou právě řešíte.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -203,7 +203,7 @@ export default function Home() {
 
       <section id="obsah" className="bg-brand-navy px-5 py-22 text-white lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[1fr_.72fr] lg:items-end"><div><p className="eyebrow text-brand-green">Šest průvodců pro konkrétní situace</p><h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">Nemusíte hledat jednu odpověď v celé knihovně.</h2></div><p className="text-base leading-7 text-slate-300">Otevřete e-book k tématu, které právě řešíte. Každý titul má svou skutečnou obálku, přesný účel a je součástí kompletního balíčku.</p></div>
+          <div className="grid gap-8 lg:grid-cols-[1fr_.72fr] lg:items-end"><div><p className="eyebrow text-brand-green">Šest průvodců pro konkrétní situace</p><h2 className="mt-4 text-balance text-3xl font-extrabold leading-[1.25] tracking-[.005em] sm:text-4xl">Nemusíte hledat jednu odpověď v celé knihovně.</h2></div><p className="text-base leading-7 text-slate-300">Otevřete e-book k tématu, které právě řešíte. Každý titul má svou skutečnou obálku, přesný účel a je součástí kompletního balíčku.</p></div>
           <figure className="section-illustration section-illustration-dark mt-10"><img src="/story/guide-library.jpg" width="1586" height="1000" alt="Ilustrace výběru praktického finančního průvodce podle aktuální situace" /><figcaption>Nečtete všechno najednou. Sáhnete po tématu, které právě potřebujete vyřešit.</figcaption></figure>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {practicalBooks.map((book, index) => <article key={book.title} className="practical-card"><img src={book.image} width="240" height="364" alt={`Obálka e-booku ${book.title}`} /><div><p className="text-xs font-bold uppercase tracking-[.14em] text-brand-green">Praktický e-book</p><h3>{book.title}</h3><p>{book.use}</p><ProductInfoDialog instanceId={`prehled-${index + 1}`} title={book.title} eyebrow="Praktický e-book" description={book.use} bestFor={book.forWhom} outcome={book.use} includes={book.inside} price="199 Kč" formatLine="Samostatný digitální e-book • PDF" coverGroups={[{ covers: [{ src: book.image, alt: `Obálka e-booku ${book.title}` }] }]} triggerLabel="Prohlédnout detail" triggerClassName="product-info-trigger-dark" /></div></article>)}
@@ -229,7 +229,7 @@ export default function Home() {
 
       <section className="bg-brand-navy px-5 py-20 text-white lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl"><p className="eyebrow text-brand-green">Jak obsah vzniká</p><h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">Srozumitelnost bez předstírání, že se finanční svět nemění.</h2><p className="mt-5 text-lg leading-8 text-slate-300">Knihovna třídí pojmy, rizika a rozhodovací otázky do návazného systému. Nadčasové principy odděluje od údajů, které je potřeba před rozhodnutím znovu ověřit.</p></div>
+          <div className="max-w-3xl"><p className="eyebrow text-brand-green">Jak obsah vzniká</p><h2 className="mt-4 text-balance text-3xl font-extrabold leading-[1.25] tracking-[.005em] sm:text-4xl">Srozumitelnost bez předstírání, že se finanční svět nemění.</h2><p className="mt-5 text-lg leading-8 text-slate-300">Knihovna třídí pojmy, rizika a rozhodovací otázky do návazného systému. Nadčasové principy odděluje od údajů, které je potřeba před rozhodnutím znovu ověřit.</p></div>
           <div className="content-method-grid">
             <article><Route /><h3>Souvislosti místo útržků</h3><p>Témata jsou seřazená tak, abyste viděli, co s čím souvisí a kterým krokem má smysl začít.</p></article>
             <article><SearchCheck /><h3>Kontrolní otázky</h3><p>U smluv, poplatků, poradců i brokerů dostanete body, které si můžete sami prověřit.</p></article>
