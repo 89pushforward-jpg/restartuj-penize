@@ -97,13 +97,13 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-14 px-5 py-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:px-8 lg:py-22">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-brand-green/25 bg-brand-green/8 px-3 py-1.5 text-sm font-semibold text-brand-green">
-              <Compass className="size-4" /> Finance od jednoduchého ke složitějšímu
+              <Compass className="size-4" /> Když už nevíte, komu ve financích věřit
             </p>
-            <h1 className="mt-6 max-w-3xl text-balance text-4xl font-extrabold leading-[1.18] tracking-[.003em] sm:text-5xl lg:text-6xl">Informací o financích je všude dost. Chybí jim pořadí, ve kterém začnou dávat smysl.</h1>
-            <div className="hero-pain-points"><span>Informace jsou roztříštěné</span><span>Pojmy přicházejí bez souvislostí</span><span>V základech zůstávají mezery</span></div>
-            <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-300"><strong className="text-white">Restartuj Peníze skládá známá finanční témata do logické posloupnosti.</strong> Začnete u jednoduchých základů, postupně doplníte starší mezery a pochopíte, jak spolu souvisejí každodenní peníze, smlouvy, riziko i investování.</p>
+            <h1 className="mt-6 max-w-3xl text-balance text-4xl font-extrabold leading-[1.18] tracking-[.003em] sm:text-5xl lg:text-6xl">Ve financích nestačí věřit. Potřebujete rozumět tomu, podle čeho se rozhodujete.</h1>
+            <div className="hero-pain-points"><span>Každý radí něco jiného</span><span>Není jasné, čí zájem je v pozadí</span><span>Nechcete znovu udělat drahou chybu</span></div>
+            <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-300">Poradce doporučuje jedno, finanční „guru“ druhé a reklama nabízí jednoduché řešení. <strong className="text-white">Restartuj Peníze vám pomůže uspořádat si souvislosti v klidu, vlastním tempem a bez prodeje finančních produktů.</strong></p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href="#cesta" className={primaryCta}>Jak je knihovna poskládaná <ArrowRight data-icon="inline-end" /></a>
+              <a href="#cesta" className={primaryCta}>Prohlédnout cestu knihovnou <ArrowRight data-icon="inline-end" /></a>
               <a href="#ukazky" className="inline-flex h-13 items-center justify-center rounded-xl border border-white/15 px-5 text-sm font-bold text-white transition hover:border-white/30 hover:bg-white/5">Podívat se dovnitř knih</a>
             </div>
             <p className="mt-4 text-xs leading-5 text-slate-400">13 PDF • jednorázová platba • bez investičních doporučení • bez následného prodejního hovoru</p>
@@ -129,20 +129,20 @@ export default function Home() {
             <div className="story-image-note"><span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand-yellow text-brand-navy"><X className="size-4" /></span><p><strong>Nejste špatní na finance.</strong><br />Jen se snažíte rozhodovat bez přehledné mapy.</p></div>
           </div>
           <div>
-            <p className="eyebrow">Problém nejsou informace</p>
-            <h2 className="section-title">Možná jste stejné pojmy slyšeli stokrát. Bez návaznosti ale pořád nevytvoří srozumitelný celek.</h2>
-            <p className="section-lead">Články, videa i bezplatné materiály mohou být kvalitní. Každý však často začíná jinde, používá jiný jazyk a předpokládá základy, které vám nikdo dříve nevysvětlil.</p>
+            <p className="eyebrow">Nedůvěra není chyba</p>
+            <h2 className="section-title">Po špatné zkušenosti nehledáte další přesvědčování. Potřebujete způsob, jak si věci ověřit sami.</h2>
+            <p className="section-lead">Ne každý finanční poradce pracuje špatně. Když ale neznáte základy, rizika a motivaci druhé strany, těžko rozeznáte poctivé vysvětlení od dobře zabaleného prodeje.</p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {[
-                'Jedna rada přichází bez toho, co jí musí předcházet.',
-                'Odborný pojem se vysvětluje dalším odborným pojmem.',
-                'Základní mezera se později násobí u složitějších témat.',
-                'Víte, že jste o tématu slyšeli — ale neumíte ho zařadit.',
+                'Každý zdroj doporučuje něco jiného.',
+                'Nevíte, kdo vysvětluje a kdo hlavně prodává.',
+                'Po špatné zkušenosti nechcete další ukvapené rozhodnutí.',
+                'Informací je dost, ale chybí jejich pořadí.',
               ].map((item) => <div key={item} className="flex gap-3 rounded-xl border border-slate-200 bg-white p-4 text-sm font-semibold leading-6 text-slate-700"><span className="mt-2 size-2 shrink-0 rounded-full bg-brand-yellow" />{item}</div>)}
             </div>
             <div className="mt-6 rounded-2xl border border-brand-green/20 bg-white p-5 text-left shadow-[0_10px_30px_rgba(3,23,42,.04)]">
               <p className="text-xs font-extrabold uppercase tracking-[.12em] text-[#087a46]">Co ukázaly rozhovory s prvními čtenáři</p>
-              <p className="mt-3 text-sm leading-6 text-slate-700">V sedmi kvalitativních rozhovorech se opakovaly chybějící základy, nejistota při neporozumění, obtížné hledání informací a praktické souvislosti, ke kterým se čtenáři ve škole nedostali. Nedůvěra k části poradců byla jedním z důsledků.</p>
+              <p className="mt-3 text-sm leading-6 text-slate-700">V sedmi kvalitativních rozhovorech se opakovaly nejistota při neporozumění, obava ze ztráty, nedůvěra k části finančních poradců a chybějící praktické souvislosti ze školy.</p>
               <p className="mt-2 text-xs leading-5 text-slate-500">Nejde o reprezentativní statistiku. Tyto odpovědi pomohly určit pořadí témat a způsob, jakým je knihovna vysvětluje.</p>
             </div>
           </div>
@@ -152,8 +152,13 @@ export default function Home() {
       <section id="cesta" className="bg-white px-5 py-20 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl text-left">
-            <p className="eyebrow">Jasné vymezení</p>
-            <h2 className="section-title">Restartuj Peníze vyplňuje mezery a skládá souvislosti v pořadí, ve kterém se dají pochopit.</h2>
+            <p className="eyebrow">Teď přichází řešení</p>
+            <h2 className="section-title">Restartuj Peníze není další zdroj navíc. Je to systém, který dává známým informacím pořadí a souvislosti.</h2>
+          </div>
+          <div className="mt-10 rounded-[2rem] border border-brand-green/30 bg-brand-navy p-7 text-left text-white shadow-[0_24px_70px_rgba(3,23,42,.12)] sm:p-10">
+            <p className="text-xs font-extrabold uppercase tracking-[.14em] text-brand-green">Hlavní rozdíl Restartuj Peníze</p>
+            <h3 className="mt-4 max-w-5xl text-balance text-2xl font-extrabold leading-[1.35] tracking-[.005em] sm:text-4xl">Informace o financích máte všude a často zdarma. Problém není jejich nedostatek, ale přílišná složitost a chybějící logické uspořádání.</h3>
+            <p className="mt-5 max-w-4xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">Témata, o kterých jste už mnohokrát slyšeli, jsou v knihovně seřazená od jednoduchých základů ke složitějším souvislostem. Při průchodu postupně doplňujete mezery z minulosti a začínáte chápat, jak do sebe jednotlivé části finančního světa zapadají.</p>
           </div>
           <div className="mt-11 grid gap-6 lg:grid-cols-2">
             <article className="definition-card definition-card-no">
