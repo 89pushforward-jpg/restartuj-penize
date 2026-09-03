@@ -17,10 +17,10 @@ import { ProductInfoDialog } from '@/components/product-info-dialog';
 import { cn } from '@/lib/utils';
 
 const proof = [
-  '2 hlavní knihy • 449 stran',
-  '4 průvodci proti podvodům',
-  '6 praktických e-booků',
-  'Mindset jako bonus • celkem 13 PDF',
+  'Finanční (Re)Start • 225 stran',
+  'Slovník investora • 224 stran',
+  '449 stran v logické posloupnosti',
+  'Ukázky uvnitř v plné kvalitě',
 ];
 
 const practicalBooks = [
@@ -88,7 +88,7 @@ export default function Home() {
             <a href="#obsah" className="transition hover:text-white">Praktické e-booky</a>
             <a href="#o-projektu" className="transition hover:text-white">O projektu</a>
           </div>
-          <a href="#nabidka" className="rounded-xl border border-brand-green/40 px-3 py-2 text-sm font-bold text-brand-green transition hover:bg-brand-green/10">Získat balíček</a>
+          <a href="#hlavni-knihy" className="rounded-xl border border-brand-green/40 px-3 py-2 text-sm font-bold text-brand-green transition hover:bg-brand-green/10">Hlavní knihy</a>
         </div>
       </nav>
 
@@ -103,10 +103,10 @@ export default function Home() {
             <div className="hero-pain-points"><span>Každý radí něco jiného</span><span>Není jasné, čí zájem je v pozadí</span><span>Nechcete znovu udělat drahou chybu</span></div>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-300">Poradce doporučuje jedno, finanční „guru“ druhé a reklama nabízí jednoduché řešení. <strong className="text-white">Restartuj Peníze vám pomůže uspořádat si souvislosti v klidu, vlastním tempem a bez prodeje finančních produktů.</strong></p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href="#cesta" className={primaryCta}>Prohlédnout cestu knihovnou <ArrowRight data-icon="inline-end" /></a>
+              <a href="#hlavni-knihy" className={primaryCta}>Prohlédnout dvě hlavní knihy <ArrowRight data-icon="inline-end" /></a>
               <a href="#ukazky" className="inline-flex h-13 items-center justify-center rounded-xl border border-white/15 px-5 text-sm font-bold text-white transition hover:border-white/30 hover:bg-white/5">Podívat se dovnitř knih</a>
             </div>
-            <p className="mt-4 text-xs leading-5 text-slate-400">13 PDF • jednorázová platba • bez investičních doporučení • bez následného prodejního hovoru</p>
+            <p className="mt-4 text-xs leading-5 text-slate-400">2 hlavní e-booky • 449 stran • bez investičních doporučení • bez následného prodejního hovoru</p>
           </div>
 
           <figure className="hero-visual">
@@ -155,10 +155,11 @@ export default function Home() {
             <p className="eyebrow">Teď přichází řešení</p>
             <h2 className="section-title">Restartuj Peníze není další zdroj navíc. Je to systém, který dává známým informacím pořadí a souvislosti.</h2>
           </div>
-          <div className="mt-10 rounded-[2rem] border border-brand-green/30 bg-brand-navy p-7 text-left text-white shadow-[0_24px_70px_rgba(3,23,42,.12)] sm:p-10">
-            <p className="text-xs font-extrabold uppercase tracking-[.14em] text-brand-green">Hlavní rozdíl Restartuj Peníze</p>
+          <div className="mt-10 grid gap-8 rounded-[2rem] border border-brand-green/30 bg-brand-navy p-7 text-left text-white shadow-[0_24px_70px_rgba(3,23,42,.12)] sm:p-10 lg:grid-cols-[1fr_.42fr] lg:items-center">
+            <div><p className="text-xs font-extrabold uppercase tracking-[.14em] text-brand-green">Hlavní rozdíl Restartuj Peníze</p>
             <h3 className="mt-4 max-w-5xl text-balance text-2xl font-extrabold leading-[1.35] tracking-[.005em] sm:text-4xl">Informace o financích máte všude a často zdarma. Problém není jejich nedostatek, ale přílišná složitost a chybějící logické uspořádání.</h3>
-            <p className="mt-5 max-w-4xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">Témata, o kterých jste už mnohokrát slyšeli, jsou v knihovně seřazená od jednoduchých základů ke složitějším souvislostem. Při průchodu postupně doplňujete mezery z minulosti a začínáte chápat, jak do sebe jednotlivé části finančního světa zapadají.</p>
+            <p className="mt-5 max-w-4xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">Témata, o kterých jste už mnohokrát slyšeli, jsou v knihovně seřazená od jednoduchých základů ke složitějším souvislostem. Při průchodu postupně doplňujete mezery z minulosti a začínáte chápat, jak do sebe jednotlivé části finančního světa zapadají.</p></div>
+            <div className="flex items-end justify-center gap-3" aria-label="Dvě hlavní knihy Restartuj Peníze"><img src="/books/financial-restart-hq.jpg" width="1200" height="1818" alt="Finanční (Re)Start" className="w-[43%] -rotate-3 rounded-xl shadow-[0_20px_45px_rgba(0,0,0,.35)]" /><img src="/books/investor-dictionary-hq.jpg" width="1200" height="1818" alt="Slovník investora" className="w-[47%] rotate-2 rounded-xl shadow-[0_20px_45px_rgba(0,0,0,.35)]" /></div>
           </div>
           <div className="mt-11 grid gap-6 lg:grid-cols-2">
             <article className="definition-card definition-card-no">
@@ -172,15 +173,15 @@ export default function Home() {
             <article className="definition-card definition-card-yes">
               <div className="definition-icon"><Route className="size-5" /></div>
               <p className="book-kicker">Co Restartuj Peníze je</p>
-              <h3>Uspořádaná knihovna, která vede od jednoduchých základů k náročnějším rozhodnutím.</h3>
+              <h3>Dvě navazující knihy, které vedou od jednoduchých základů k náročnějším rozhodnutím.</h3>
               <ul>
-                {['logická posloupnost od základních témat ke složitějším', 'referenční slovník, který doplní nejasný pojem právě ve chvíli, kdy ho potřebujete', 'praktické průvodce, které propojí pochopení s konkrétní situací'].map((item) => <li key={item}><Check />{item}</li>)}
+                {['Finanční (Re)Start pro logickou posloupnost finančních témat', 'Slovník investora pro pojmy, které potřebujete průběžně doplnit', 'jeden společný základ pro posuzování dalších informací a nabídek'].map((item) => <li key={item}><Check />{item}</li>)}
               </ul>
             </article>
           </div>
           <div className="map-panel">
             <img src="/story/map-out-web.jpg" width="1586" height="1000" alt="Ilustrace přehledné cesty z finančního zmatku k uspořádanému systému" />
-            <div className="map-panel-copy"><div className="flex items-center gap-3"><img src="/brand/mark-official.png" width="960" height="960" alt="" className="size-14 object-contain" /><span className="inline-flex rounded-full bg-brand-green/12 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[.12em] text-brand-green">Cesta knihovnou</span></div><h3>Každá další vrstva navazuje na to, co už dává smysl.</h3><p>Nejdřív doplníte základní mezery. Potom propojíte pojmy do celku a nakonec sáhnete po praktickém průvodci pro situaci, kterou právě řešíte.</p><div className="mt-6 flex flex-wrap gap-2 text-xs font-bold text-slate-200"><span>1. Doplnit mezery</span><ArrowRight /><span>2. Spojit pojmy</span><ArrowRight /><span>3. Pochopit celek</span><ArrowRight /><span>4. Použít v praxi</span></div></div>
+            <div className="map-panel-copy"><div className="flex items-center gap-3"><img src="/brand/mark-official.png" width="960" height="960" alt="" className="size-14 object-contain" /><span className="inline-flex rounded-full bg-brand-green/12 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[.12em] text-brand-green">Dvě knihy, jeden systém</span></div><h3>Finanční (Re)Start vytvoří mapu. Slovník investora doplní jazyk.</h3><p>První kniha seřadí témata do návazného celku. Druhá zůstává po ruce pro pojmy, které potkáte při čtení smluv, článků nebo nabídek.</p><div className="mt-6 flex flex-wrap gap-2 text-xs font-bold text-slate-200"><span>1. Doplnit základy</span><ArrowRight /><span>2. Spojit souvislosti</span><ArrowRight /><span>3. Rozumět pojmům</span><ArrowRight /><span>4. Rozhodovat se s přehledem</span></div></div>
           </div>
         </div>
       </section>
@@ -201,25 +202,25 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="ukazky" className="bg-[#f5f8f6] px-5 py-22 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div>
+            <div className="max-w-3xl text-left"><p className="eyebrow">Nejdřív se podívejte dovnitř</p><h2 className="section-title">Nejen názvy na obálce. Prohlédněte si témata z různých částí obou hlavních knih.</h2><p className="section-lead">Kliknutím otevřete celou stranu ve vysokém rozlišení a můžete si ověřit sazbu, obrázky i způsob vysvětlení ještě před představením celé knihovny.</p></div>
+            <div className="mt-12 grid gap-8 lg:grid-cols-2">
+              {[[ 'Finanční (Re)Start', financialSamples], ['Slovník investora', dictionarySamples]].map(([title, samples]) => <article key={title as string} className="sample-book"><div className="sample-book-heading"><span>Ukázky napříč knihou</span><h3>{title as string}</h3></div><div className="sample-grid">{(samples as typeof financialSamples).map((sample) => <a key={sample.src} href={sample.src} target="_blank" rel="noreferrer"><img src={sample.src} width="1400" height="2121" alt={sample.alt} loading="lazy" /><span>{sample.topic} ↗</span></a>)}</div></article>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="obsah" className="bg-brand-navy px-5 py-22 text-white lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[1fr_.72fr] lg:items-end"><div><p className="eyebrow text-brand-green">Šest průvodců pro konkrétní situace</p><h2 className="mt-4 text-balance text-3xl font-extrabold leading-[1.25] tracking-[.005em] sm:text-4xl">Nemusíte hledat jednu odpověď v celé knihovně.</h2></div><p className="text-base leading-7 text-slate-300">Otevřete e-book k tématu, které právě řešíte. Každý titul má svou skutečnou obálku, přesný účel a je součástí kompletního balíčku.</p></div>
+          <div className="grid gap-8 lg:grid-cols-[1fr_.72fr] lg:items-end"><div><p className="eyebrow text-brand-green">Teď se základ rozšiřuje v celou knihovnu</p><h2 className="mt-4 text-balance text-3xl font-extrabold leading-[1.25] tracking-[.005em] sm:text-4xl">Dvě hlavní knihy vysvětlují celek. Další průvodci pomáhají ve chvíli, kdy řešíte konkrétní situaci.</h2></div><p className="text-base leading-7 text-slate-300">K pevnému základu se přidává šest praktických e-booků, čtyři průvodci proti podvodům a bonus Mindset. Nemusíte je číst postupně — otevřete právě ten, který v danou chvíli potřebujete.</p></div>
           <figure className="section-illustration section-illustration-dark mt-10"><img src="/story/guide-library.jpg" width="1586" height="1000" alt="Ilustrace výběru praktického finančního průvodce podle aktuální situace" /><figcaption>Nečtete všechno najednou. Sáhnete po tématu, které právě potřebujete vyřešit.</figcaption></figure>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {practicalBooks.map((book, index) => <article key={book.title} className="practical-card"><img src={book.image} width="240" height="364" alt={`Obálka e-booku ${book.title}`} /><div><p className="text-xs font-bold uppercase tracking-[.14em] text-brand-green">Praktický e-book</p><h3>{book.title}</h3><p>{book.use}</p><ProductInfoDialog instanceId={`prehled-${index + 1}`} title={book.title} eyebrow="Praktický e-book" description={book.use} bestFor={book.forWhom} outcome={book.use} includes={book.inside} price="199 Kč" formatLine="Samostatný digitální e-book • PDF" coverGroups={[{ covers: [{ src: book.image, alt: `Obálka e-booku ${book.title}` }] }]} triggerLabel="Prohlédnout detail" triggerClassName="product-info-trigger-dark" /></div></article>)}
           </div>
           <div className="bonus-panel"><img src="/books/mindset.png" width="240" height="364" alt="Obálka bonusu Mindset úspěšného investora" /><div><span>BONUS K OBOU HLAVNÍM KNIHÁM</span><h3>Mindset úspěšného investora</h3><p>Vytvoříte si osobní pravidla, která pomáhají brzdit impulzivní nákupy, FOMO a chaotické změny plánu ve chvíli, kdy emoce přebírají kontrolu.</p><ProductInfoDialog instanceId="bonus-mindset" title="Mindset úspěšného investora" eyebrow="Bonusový e-book" description="Praktický doplněk k hlavním knihám pro chvíle, kdy správné rozhodnutí nekomplikuje nedostatek informací, ale emoce a tlak okolí." bestFor="Znáte základní principy, ale FOMO, panika nebo časté změny plánu vám komplikují jejich dodržování." outcome="Sepíšete si vlastní rozhodovací pravidla a vytvoříte odstup mezi emocí a konkrétní akcí." includes={['rozpoznání emočních spouštěčů', 'pravidla pro klidnější investiční rozhodování', 'práce s FOMO a impulzivní změnou plánu']} price="Bonus k Finanční mapě" formatLine="Bonusový digitální e-book • PDF" coverGroups={[{ covers: [{ src: '/books/mindset.png', alt: 'Mindset úspěšného investora' }] }]} triggerLabel="Prohlédnout bonus" triggerClassName="product-info-trigger-dark" /></div></div>
-        </div>
-      </section>
-
-      <section id="ukazky" className="bg-[#f5f8f6] px-5 py-22 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div>
-            <div className="max-w-3xl text-left"><p className="eyebrow">Uvnitř skutečných knih</p><h2 className="section-title">Nejen názvy na obálce. Podívejte se na témata z různých částí obou knih.</h2><p className="section-lead">Kliknutím otevřete celou stranu ve vysokém rozlišení a můžete si prohlédnout sazbu, obrázky i způsob vysvětlení.</p></div>
-            <div className="mt-12 grid gap-8 lg:grid-cols-2">
-              {[['Finanční (Re)Start', financialSamples], ['Slovník investora', dictionarySamples]].map(([title, samples]) => <article key={title as string} className="sample-book"><div className="sample-book-heading"><span>Ukázky napříč knihou</span><h3>{title as string}</h3></div><div className="sample-grid">{(samples as typeof financialSamples).map((sample) => <a key={sample.src} href={sample.src} target="_blank" rel="noreferrer"><img src={sample.src} width="1400" height="2121" alt={sample.alt} loading="lazy" /><span>{sample.topic} ↗</span></a>)}</div></article>)}
-            </div>
-          </div>
         </div>
       </section>
 
