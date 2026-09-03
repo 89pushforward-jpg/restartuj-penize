@@ -103,7 +103,7 @@ export function OfferStore({ practicalBooks }: { practicalBooks: PracticalBook[]
   return <>
     <section id="nabidka" className="bg-white px-5 py-22 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl text-left"><p className="eyebrow">Začněte podle aktuální potřeby</p><h2 className="section-title">Tři vstupy do knihovny. Každý řeší jinou úroveň orientace.</h2><p className="section-lead">Začněte ochranou před podvody, konkrétní situací nebo pevnými základy. Pokud chcete mít všechny tři vrstvy pohromadě, kompletní knihovna na ně navazuje níže.</p></div>
+        <div className="max-w-3xl text-left"><p className="eyebrow">Začněte podle aktuální potřeby</p><h2 className="section-title">Tři vstupy do jednoho systému. Každý doplňuje jinou část finanční mapy.</h2><p className="section-lead">Jednotlivé sady dávají smysl samostatně. Dohromady ale vytvářejí logickou cestu od rozpoznání rizika přes řešení běžných situací až po pochopení širších souvislostí.</p></div>
 
         <div className="offer-alternatives-heading"><p className="eyebrow">Od ochrany k dlouhodobému přehledu</p><h3>Vyberte si sadu podle toho, co právě potřebujete vyřešit.</h3></div>
 
