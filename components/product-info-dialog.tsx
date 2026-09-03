@@ -29,6 +29,8 @@ function slugify(value: string) {
 
 export function ProductInfoDialog({ instanceId, title, eyebrow, description, bestFor, outcome, includes, price, formatLine, coverGroups, samples = [], triggerLabel = 'Více informací', triggerClassName }: ProductInfoDialogProps) {
   const dialogId = `product-${slugify(title)}-${slugify(instanceId)}`;
+  const coverCount = coverGroups.reduce((count, group) => count + group.covers.length, 0);
+  const hasSingleCover = coverCount === 1;
 
   return (
     <>
@@ -36,10 +38,10 @@ export function ProductInfoDialog({ instanceId, title, eyebrow, description, bes
       <dialog id={dialogId} popover="auto" className="product-info-popover" aria-labelledby={`${dialogId}-title`}>
         <button type="button" popoverTarget={dialogId} popoverTargetAction="hide" className="product-info-close" aria-label="Zavřít detail produktu">×</button>
         <div className="product-info-layout">
-          <aside className="product-info-visual">
+          <aside className={cn('product-info-visual', hasSingleCover && 'product-info-visual-single')}>
             <p>{formatLine}</p>
             <div className="product-info-cover-groups">
-              {coverGroups.map((group, groupIndex) => <div key={`${group.label ?? 'Obálky'}-${groupIndex}`}>{group.label && <strong>{group.label}</strong>}<div>{group.covers.map((cover) => <img key={cover.src} src={cover.src} width="1200" height="1818" alt={cover.alt} />)}</div></div>)}
+              {coverGroups.map((group, groupIndex) => <div key={`${group.label ?? 'Obálky'}-${groupIndex}`}>{group.label && <strong>{group.label}</strong>}<div>{group.covers.map((cover) => hasSingleCover ? <a key={cover.src} href={cover.src} target="_blank" rel="noreferrer" className="product-info-cover-link" aria-label={`${cover.alt} — otevřít samostatně`}><img src={cover.src} width="1200" height="1818" alt={cover.alt} /><span>Otevřít obálku samostatně ↗</span></a> : <img key={cover.src} src={cover.src} width="1200" height="1818" alt={cover.alt} />)}</div></div>)}
             </div>
             <div className="product-info-price"><span>Cena</span><strong>{price}</strong><small>Jednorázová platba • digitální doručení</small></div>
           </aside>

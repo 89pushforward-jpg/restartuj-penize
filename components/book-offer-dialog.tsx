@@ -24,11 +24,11 @@ export function BookOfferDialog({ title, subtitle, cover, pages, description, re
 
       <dialog id={dialogId} popover="auto" className="book-popover" aria-labelledby={`${dialogId}-title`}>
         <button type="button" popoverTarget={dialogId} popoverTargetAction="hide" className="absolute right-3 top-3 z-20 grid size-10 place-items-center rounded-full border border-white/15 bg-brand-navy/90 text-xl leading-none text-white shadow-lg transition hover:bg-[#0b2944]" aria-label="Zavřít detail knihy">×</button>
-        <div className="grid lg:grid-cols-[.66fr_1.34fr]">
+        <div className="grid lg:grid-cols-[.78fr_1.22fr]">
           <aside className="relative overflow-hidden bg-brand-navy p-7 text-white sm:p-9">
             <div className="absolute -right-20 -top-20 size-64 rounded-full border-[38px] border-brand-green/10" />
             <span className="relative inline-flex rounded-full bg-brand-green/12 px-3 py-1.5 text-xs font-extrabold tracking-[.08em] text-brand-green">{pages} • digitální PDF</span>
-            <img src={cover} width="1200" height="1818" alt={`Obálka knihy ${title}`} className="relative mx-auto mt-7 w-full max-w-[230px] rounded-xl shadow-[0_28px_65px_rgba(0,0,0,.5)]" />
+            <a href={cover} target="_blank" rel="noreferrer" className="group relative mx-auto mt-7 block w-full max-w-[320px]" aria-label={`Obálka knihy ${title} — otevřít samostatně`}><img src={cover} width="1200" height="1818" alt={`Obálka knihy ${title}`} className="w-full rounded-xl shadow-[0_28px_65px_rgba(0,0,0,.5)] transition group-hover:-translate-y-1" /><span className="mt-3 block text-center text-xs font-bold text-slate-300 transition group-hover:text-white">Otevřít obálku samostatně ↗</span></a>
             <div className="relative mt-7 rounded-2xl border border-white/10 bg-white/[.055] p-5">
               <p className="text-xs font-extrabold uppercase tracking-[.14em] text-brand-green">Vyberte si způsob nákupu</p>
               <p className="mt-2 text-2xl font-extrabold text-white">{individualPrice}</p>
@@ -38,7 +38,7 @@ export function BookOfferDialog({ title, subtitle, cover, pages, description, re
 
           <div className="p-6 sm:p-9 lg:p-10">
             <p className="book-kicker">{subtitle}</p>
-            <h2 id={`${dialogId}-title`} className="mt-3 text-3xl font-extrabold leading-[1.2] tracking-[-.02em] text-brand-navy sm:text-4xl">{title}</h2>
+            <h2 id={`${dialogId}-title`} className="mt-3 text-3xl font-extrabold leading-[1.25] tracking-[.004em] text-brand-navy sm:text-4xl">{title}</h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">{description}</p>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
